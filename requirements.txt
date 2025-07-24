@@ -1,0 +1,43 @@
+# FastAPI and Server
+
+fastapi
+
+uvicorn[standard]
+
+# Data Handling and Validation
+
+pydantic
+
+# Web Scraping and HTTP Requests
+
+requests
+
+beautifulsoup4
+
+lxml
+
+# Testing
+
+pytest
+
+pytest-mock
+
+# Utilities
+
+pyyaml # For parsing the development_checklist.yaml
+
+tenacity # For robust retries on API calls
+
+# AI / LLM Integration
+
+google-generativeai
+
+# Agent-to-Agent Communication (Future Libraries)
+
+# Note: These are placeholders for emergent technologies as of July 2025.
+
+# The actual package names may differ upon release.
+
+# google-adk
+
+# mcp-protocol-lib
