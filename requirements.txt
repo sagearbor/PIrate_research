@@ -28,6 +28,11 @@ pyyaml # For parsing the development_checklist.yaml
 
 tenacity # For robust retries on API calls
 
+# Dashboard and Export
+jinja2 # For export template rendering
+matplotlib # For dashboard analytics charts
+pandas # For data analysis and export capabilities
+
 # AI / LLM Integration
 
 google-generativeai

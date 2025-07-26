@@ -52,11 +52,18 @@ graph TD
     end
 
     subgraph Analysis & Generation Phase
-        F --> G{Matcher Agent};
-        G -->|Matched Pairs| H{Idea Generation Agent};
-        G -->|Matched Pairs| I{Collaborator Suggestion Agent};
-        H -->|Generates Abstracts| J[Enriched Data Object];
+        F --> G{Matcher Agent with Multi-Dimensional Scoring};
+        G -->|Scored Matches| H{Idea Generation Agent};
+        G -->|Scored Matches| I{Collaborator Suggestion Agent};
+        H -->|Conservative/Innovative/Stretch Variants + Budget/Timeline| J[Enriched Data Object];
         I -->|Finds Collaborators| J;
+    end
+
+    subgraph Dashboard & Export Phase
+        J --> P{Admin Dashboard};
+        J --> Q{Export Tools};
+        P -->|Analytics & Monitoring| R[System Metrics];
+        Q -->|Formatted Proposals| S[Export Outputs];
     end
 
     subgraph Notification Phase

@@ -118,25 +118,29 @@ Phase-2-Data-Ingestion:
 # ===================================================================
 Phase-3-Core-Logic:
   - id: 3.1.1
-    description: "Create a 'Matcher Agent' to connect faculty profiles to relevant funding opportunities."
+    description: "Create a 'Matcher Agent' with multi-dimensional scoring (research methods, career stage, deadline urgency)."
     status: pending
     prerequisites: [2.3.1]
     artifacts:
       - "src/agents/matcher_agent.py"
+      - "src/core/scoring_models.py"
     testing:
-      - "tests/agents/test_matcher_agent.py: Provide mock faculty and funding data. Test the matching logic (e.g., keyword matching, research area alignment)."
-      - "Mock data: 'tests/mock_data/processed_faculty.json', 'tests/mock_data/processed_funding.json'"
+      - "tests/agents/test_matcher_agent.py: Test multi-dimensional scoring logic with mock faculty/funding data. Verify deadline urgency weighting, career stage considerations, and methodology alignment."
+      - "tests/core/test_scoring_models.py: Unit tests for individual scoring components."
+      - "Mock data: 'tests/mock_data/processed_faculty.json', 'tests/mock_data/processed_funding.json', 'tests/mock_data/scoring_test_cases.json'"
 
 
   - id: 3.2.1
-    description: "Create an 'Idea Generation Agent' that uses an LLM to stub out abstracts (low, medium, stretch)."
+    description: "Create an 'Idea Generation Agent' that generates multiple proposal variants (conservative, innovative, stretch) with budget/timeline estimates."
     status: pending
     prerequisites: [3.1.1]
     artifacts:
       - "src/agents/idea_agent.py"
+      - "src/core/proposal_variants.py"
     testing:
-      - "tests/agents/test_idea_agent.py: Mock the LLM API call. Verify that the agent correctly formats the prompt with faculty and funding data and correctly parses the LLM's structured response."
-      - "Mock data: A matched pair of (faculty, funding_opp). A mock JSON response from the LLM."
+      - "tests/agents/test_idea_agent.py: Mock the LLM API call. Test generation of 3 proposal variants with different risk levels and verify budget/timeline estimation logic."
+      - "tests/core/test_proposal_variants.py: Test variant classification and estimation algorithms."
+      - "Mock data: Matched faculty/funding pairs, mock LLM responses for each variant type, budget estimation test cases."
 
 
   - id: 3.3.1
@@ -162,35 +166,72 @@ Phase-3-Core-Logic:
 
 
 # ===================================================================
-# Phase 4: A2A Integration and API Exposure
+# Phase 4: MVP Dashboard and Analytics
 # ===================================================================
-Phase-4-Integration:
+Phase-4-Dashboard:
   - id: 4.1.1
-    description: "Integrate Google ADK for agent-to-agent communication."
+    description: "Create a simple admin dashboard for system monitoring and basic analytics."
     status: pending
     prerequisites: [3.4.1]
+    artifacts:
+      - "src/dashboard/admin_dashboard.py"
+      - "src/core/analytics.py"
+    testing:
+      - "tests/dashboard/test_admin_dashboard.py: Test dashboard endpoints, data aggregation, and system health checks."
+      - "tests/core/test_analytics.py: Test recommendation effectiveness tracking and basic metrics calculation."
+      - "Mock data: 'tests/mock_data/system_metrics.json', 'tests/mock_data/recommendation_history.json'"
+
+  - id: 4.1.2
+    description: "Add export capabilities for proposals and collaboration introductions."
+    status: pending
+    prerequisites: [3.2.1, 3.3.1]
+    artifacts:
+      - "src/tools/exporters/proposal_exporter.py"
+      - "src/tools/exporters/collaboration_exporter.py"
+    testing:
+      - "tests/tools/exporters/test_proposal_exporter.py: Test generation of formatted proposal outlines in multiple formats."
+      - "tests/tools/exporters/test_collaboration_exporter.py: Test collaboration introduction email generation."
+      - "Mock data: Complete proposal data objects, collaboration match pairs."
+
+  - id: 4.1.3
+    description: "Implement configuration management for different institutions."
+    status: pending
+    prerequisites: [4.1.1]
+    artifacts:
+      - "src/core/config_manager.py"
+      - "config/institution_templates/"
+    testing:
+      - "tests/core/test_config_manager.py: Test loading different institution configurations, validation, and dynamic settings management."
+      - "Mock data: 'tests/mock_data/institution_configs/', sample configuration files."
+
+# ===================================================================
+# Phase 5: A2A Integration and API Exposure
+# ===================================================================
+Phase-5-Integration:
+  - id: 5.1.1
+    description: "Integrate Google ADK for agent-to-agent communication."
+    status: pending
+    prerequisites: [4.1.3]
     artifacts:
       - "src/core/a2a_config.py"
     testing:
       - "tests/core/test_a2a_config.py: Create two mock agents and test if they can exchange a simple message using the ADK setup."
       - "Mock data: N/A"
 
-
-  - id: 4.1.2
+  - id: 5.1.2
     description: "Refactor agents to communicate and trigger each other via A2A protocol instead of direct calls."
     status: pending
-    prerequisites: [4.1.1]
+    prerequisites: [5.1.1]
     artifacts:
       - "Updated files in src/agents/"
     testing:
       - "Full integration test. Trigger the Ingestion Agent and verify it kicks off the Matcher Agent, which then kicks off the subsequent agents, all via A2A."
       - "Mock data: Initial trigger call."
 
-
-  - id: 4.2.1
+  - id: 5.2.1
     description: "Expose a main orchestration endpoint in FastAPI (e.g., /api/v1/run-analysis)."
     status: pending
-    prerequisites: [4.1.2]
+    prerequisites: [5.1.2]
     artifacts:
       - "Updated src/main.py"
     testing:
@@ -199,13 +240,40 @@ Phase-4-Integration:
 
 
 # ===================================================================
-# Phase 5: Advanced Features (Future Work)
+# Phase 6: Research-Forward Data Structures
 # ===================================================================
-Phase-5-Advanced:
-  - id: 5.1.1
+Phase-6-Research-Forward:
+  - id: 6.1.1
+    description: "Implement structured research question generation and methodology tagging for future AI research capabilities."
+    status: pending
+    prerequisites: [5.2.1]
+    artifacts:
+      - "src/core/research_structures.py"
+      - "src/agents/question_generator.py"
+    testing:
+      - "tests/core/test_research_structures.py: Test research question formatting, methodology classification, and literature gap identification."
+      - "tests/agents/test_question_generator.py: Mock LLM calls to test structured research question generation."
+      - "Mock data: Sample research domains, methodology taxonomies, literature gap examples."
+
+  - id: 6.1.2
+    description: "Add integration hooks and plugin architecture for future research automation modules."
+    status: pending
+    prerequisites: [6.1.1]
+    artifacts:
+      - "src/core/plugin_manager.py"
+      - "src/interfaces/research_plugin_interface.py"
+    testing:
+      - "tests/core/test_plugin_manager.py: Test plugin loading, interface validation, and hook execution."
+      - "Mock data: Sample plugin configurations, mock research modules."
+
+# ===================================================================
+# Phase 7: Advanced Features (Future Work)
+# ===================================================================
+Phase-7-Advanced:
+  - id: 7.1.1
     description: "Design and implement a 'Research Agent' to perform parts of the proposed research (e.g., literature review, data simulation)."
     status: "pending"
-    prerequisites: [4.2.1]
+    prerequisites: [6.1.2]
     artifacts:
       - "src/agents/research_agent.py"
     testing: "TBD"
