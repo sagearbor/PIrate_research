@@ -1,0 +1,62 @@
+{
+  "profile": {
+    "name": "Dr. John Smith",
+    "scholar_id": "abc123def456",
+    "affiliation": "Stanford University",
+    "email_verified": "jsmith@stanford.edu",
+    "interests": ["Machine Learning", "Artificial Intelligence", "Computer Vision"],
+    "homepage": "https://stanford.edu/~jsmith",
+    "citedby": 2847,
+    "hindex": 23,
+    "i10index": 45
+  },
+  "publications": [
+    {
+      "title": "Deep Learning Approaches for Medical Image Analysis",
+      "authors": ["John Smith", "Jane Doe", "Robert Johnson"],
+      "year": 2023,
+      "venue": "Nature Machine Intelligence",
+      "citations": 156,
+      "url": "https://scholar.google.com/citations?view_op=view_citation&hl=en&user=abc123def456&citation_for_view=abc123def456:u5HHmVD_uO8C",
+      "abstract": "This paper presents novel deep learning approaches for analyzing medical images with improved accuracy and efficiency.",
+      "keywords": ["deep learning", "medical imaging", "computer vision"]
+    },
+    {
+      "title": "Federated Learning in Healthcare: Privacy-Preserving Machine Learning",
+      "authors": ["John Smith", "Alice Brown", "Michael Davis"],
+      "year": 2022,
+      "venue": "Journal of Medical Internet Research",
+      "citations": 89,
+      "url": "https://scholar.google.com/citations?view_op=view_citation&hl=en&user=abc123def456&citation_for_view=abc123def456:d1gkVwhDpl0C",
+      "abstract": "We explore federated learning techniques for healthcare applications while maintaining patient privacy.",
+      "keywords": ["federated learning", "healthcare", "privacy", "machine learning"]
+    },
+    {
+      "title": "Explainable AI for Clinical Decision Support Systems",
+      "authors": ["John Smith", "Sarah Wilson", "David Lee"],
+      "year": 2021,
+      "venue": "Artificial Intelligence in Medicine",
+      "citations": 203,
+      "url": "https://scholar.google.com/citations?view_op=view_citation&hl=en&user=abc123def456&citation_for_view=abc123def456:u-x6o8ySG0sC",
+      "abstract": "This work addresses the need for interpretable AI systems in clinical settings through novel explainability techniques.",
+      "keywords": ["explainable AI", "clinical decision support", "interpretability"]
+    }
+  ],
+  "coauthors": [
+    {
+      "name": "Jane Doe",
+      "affiliation": "MIT",
+      "scholar_id": "def456ghi789"
+    },
+    {
+      "name": "Alice Brown", 
+      "affiliation": "Harvard Medical School",
+      "scholar_id": "ghi789jkl012"
+    },
+    {
+      "name": "Robert Johnson",
+      "affiliation": "Stanford University",
+      "scholar_id": "jkl012mno345"
+    }
+  ]
+}

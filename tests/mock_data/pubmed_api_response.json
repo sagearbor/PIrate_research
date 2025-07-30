@@ -1,0 +1,188 @@
+{
+  "esearchresult": {
+    "count": "4",
+    "retmax": "4",
+    "retstart": "0",
+    "idlist": [
+      "36789012",
+      "36234567",
+      "35876543",
+      "35432109"
+    ],
+    "translationset": [
+      {
+        "from": "\"Smith J\"[Author]",
+        "to": "\"Smith, John\"[Author] OR \"Smith, J\"[Author]"
+      }
+    ],
+    "translationstack": [
+      {
+        "term": "\"Smith J\"[Author]",
+        "field": "Author",
+        "count": "4",
+        "explode": "Y"
+      },
+      {
+        "term": "\"Stanford University\"[Affiliation]",
+        "field": "Affiliation",
+        "count": "2156",
+        "explode": "N"
+      },
+      "AND"
+    ],
+    "querytranslation": "(\"Smith, John\"[Author] OR \"Smith, J\"[Author]) AND \"Stanford University\"[Affiliation]"
+  },
+  "detailed_results": [
+    {
+      "pmid": "36789012",
+      "title": "Machine Learning Approaches for Personalized Cancer Treatment",
+      "authors": [
+        {
+          "name": "Smith J",
+          "full_name": "John Smith",
+          "affiliation": "Department of Computer Science, Stanford University, Stanford, CA, USA"
+        },
+        {
+          "name": "Johnson R",
+          "full_name": "Robert Johnson",
+          "affiliation": "Stanford Cancer Institute, Stanford University, Stanford, CA, USA"
+        },
+        {
+          "name": "Williams S",
+          "full_name": "Susan Williams",
+          "affiliation": "Department of Oncology, Mayo Clinic, Rochester, MN, USA"
+        }
+      ],
+      "journal": "Nature Medicine",
+      "pubdate": "2023 Mar",
+      "volume": "29",
+      "issue": "3",
+      "pages": "456-467",
+      "doi": "10.1038/s41591-023-02234-x",
+      "pmcid": "PMC9987654",
+      "abstract": "Personalized cancer treatment requires precise prediction of therapeutic responses. Here we develop machine learning models that integrate genomic, transcriptomic, and clinical data to predict treatment outcomes for various cancer types.",
+      "keywords": [
+        "machine learning",
+        "personalized medicine",
+        "cancer treatment",
+        "genomics",
+        "precision oncology"
+      ],
+      "mesh_terms": [
+        "Neoplasms/therapy",
+        "Machine Learning",
+        "Precision Medicine",
+        "Genomics"
+      ]
+    },
+    {
+      "pmid": "36234567",
+      "title": "Deep Learning for Medical Image Segmentation: A Comprehensive Review",
+      "authors": [
+        {
+          "name": "Smith J",
+          "full_name": "John Smith",
+          "affiliation": "Department of Computer Science, Stanford University, Stanford, CA, USA"
+        },
+        {
+          "name": "Davis M",
+          "full_name": "Michael Davis",
+          "affiliation": "Department of Radiology, Stanford University Medical Center, Stanford, CA, USA"
+        }
+      ],
+      "journal": "Medical Image Analysis",
+      "pubdate": "2023 Jan",
+      "volume": "83",
+      "pages": "102645",
+      "doi": "10.1016/j.media.2022.102645",
+      "abstract": "Medical image segmentation is crucial for diagnosis and treatment planning. This comprehensive review examines recent advances in deep learning approaches for medical image segmentation across various imaging modalities.",
+      "keywords": [
+        "deep learning",
+        "medical imaging",
+        "image segmentation",
+        "convolutional neural networks",
+        "computer vision"
+      ],
+      "mesh_terms": [
+        "Deep Learning",
+        "Image Processing, Computer-Assisted",
+        "Diagnostic Imaging"
+      ]
+    },
+    {
+      "pmid": "35876543",
+      "title": "Privacy-Preserving Machine Learning in Healthcare: Federated Learning Approaches",
+      "authors": [
+        {
+          "name": "Smith J",
+          "full_name": "John Smith",
+          "affiliation": "Department of Computer Science, Stanford University, Stanford, CA, USA"
+        },
+        {
+          "name": "Brown A",
+          "full_name": "Alice Brown",
+          "affiliation": "Department of Biomedical Informatics, Harvard Medical School, Boston, MA, USA"
+        },
+        {
+          "name": "Lee D",
+          "full_name": "David Lee",
+          "affiliation": "Department of Computer Science, Stanford University, Stanford, CA, USA"
+        }
+      ],
+      "journal": "Journal of Medical Internet Research",
+      "pubdate": "2022 Nov",
+      "volume": "24",
+      "issue": "11",
+      "pages": "e42153",
+      "doi": "10.2196/42153",
+      "pmcid": "PMC9654321",
+      "abstract": "Healthcare data privacy is paramount in machine learning applications. We present federated learning frameworks that enable collaborative model training while preserving patient privacy across multiple healthcare institutions.",
+      "keywords": [
+        "federated learning",
+        "healthcare privacy",
+        "machine learning",
+        "data protection",
+        "collaborative learning"
+      ],
+      "mesh_terms": [
+        "Machine Learning",
+        "Confidentiality",
+        "Medical Informatics"
+      ]
+    },
+    {
+      "pmid": "35432109",
+      "title": "Explainable AI in Clinical Decision Support: Interpretable Models for Healthcare",
+      "authors": [
+        {
+          "name": "Smith J",
+          "full_name": "John Smith",
+          "affiliation": "Department of Computer Science, Stanford University, Stanford, CA, USA"
+        },
+        {
+          "name": "Wilson S",
+          "full_name": "Sarah Wilson",
+          "affiliation": "Department of Medicine, Stanford University Medical Center, Stanford, CA, USA"
+        }
+      ],
+      "journal": "Artificial Intelligence in Medicine",
+      "pubdate": "2022 Aug",
+      "volume": "130",
+      "pages": "102339",
+      "doi": "10.1016/j.artmed.2022.102339",
+      "abstract": "Clinical decision support systems require transparent and interpretable AI models. We develop explainable machine learning approaches that provide clear reasoning for medical recommendations while maintaining predictive accuracy.",
+      "keywords": [
+        "explainable AI",
+        "clinical decision support",
+        "interpretable machine learning",
+        "healthcare AI",
+        "medical informatics"
+      ],
+      "mesh_terms": [
+        "Artificial Intelligence",
+        "Decision Support Systems, Clinical",
+        "Medical Informatics"
+      ]
+    }
+  ]
+}

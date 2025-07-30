@@ -1,0 +1,382 @@
+{
+  "orcid-identifier": {
+    "uri": "https://orcid.org/0000-0002-1825-0097",
+    "path": "0000-0002-1825-0097",
+    "host": "orcid.org"
+  },
+  "preferences": {
+    "locale": "en"
+  },
+  "history": {
+    "creation-method": "WEBSITE",
+    "completion-date": null,
+    "submission-date": {
+      "value": 1460762070000
+    },
+    "last-modified-date": {
+      "value": 1704067200000
+    },
+    "claimed": true,
+    "source": null,
+    "deactivation-date": null,
+    "verified-email": true,
+    "verified-primary-email": true
+  },
+  "person": {
+    "last-modified-date": {
+      "value": 1704067200000
+    },
+    "name": {
+      "created-date": {
+        "value": 1460762070000
+      },
+      "last-modified-date": {
+        "value": 1704067200000
+      },
+      "given-names": {
+        "value": "John"
+      },
+      "family-name": {
+        "value": "Smith"
+      },
+      "credit-name": {
+        "value": "Dr. John Smith"
+      },
+      "source": {
+        "source-orcid": {
+          "uri": "https://orcid.org/0000-0002-1825-0097",
+          "path": "0000-0002-1825-0097",
+          "host": "orcid.org"
+        },
+        "source-name": {
+          "value": "John Smith"
+        }
+      },
+      "visibility": "public"
+    },
+    "other-names": {
+      "last-modified-date": {
+        "value": 1609459200000
+      },
+      "other-name": [
+        {
+          "created-date": {
+            "value": 1609459200000
+          },
+          "last-modified-date": {
+            "value": 1609459200000
+          },
+          "content": "J. Smith",
+          "visibility": "public",
+          "path": "/0000-0002-1825-0097/other-names/1234567"
+        }
+      ],
+      "path": "/0000-0002-1825-0097/other-names"
+    },
+    "biography": {
+      "created-date": {
+        "value": 1609459200000
+      },
+      "last-modified-date": {
+        "value": 1704067200000
+      },
+      "content": "Dr. John Smith is a Professor of Computer Science at Stanford University, specializing in machine learning applications in healthcare and medical imaging. His research focuses on developing privacy-preserving AI systems for clinical decision support.",
+      "visibility": "public",
+      "path": "/0000-0002-1825-0097/biography"
+    },
+    "researcher-urls": {
+      "last-modified-date": {
+        "value": 1704067200000
+      },
+      "researcher-url": [
+        {
+          "created-date": {
+            "value": 1609459200000
+          },
+          "last-modified-date": {
+            "value": 1704067200000
+          },
+          "url": {
+            "value": "https://stanford.edu/~jsmith"
+          },
+          "url-name": "Stanford Homepage",
+          "visibility": "public"
+        },
+        {
+          "created-date": {
+            "value": 1609459200000
+          },
+          "last-modified-date": {
+            "value": 1704067200000
+          },
+          "url": {
+            "value": "https://scholar.google.com/citations?user=abc123def456"
+          },
+          "url-name": "Google Scholar",
+          "visibility": "public"
+        }
+      ]
+    },
+    "emails": {
+      "last-modified-date": {
+        "value": 1704067200000
+      },
+      "email": [
+        {
+          "created-date": {
+            "value": 1460762070000
+          },
+          "last-modified-date": {
+            "value": 1704067200000
+          },
+          "email": "jsmith@stanford.edu",
+          "primary": true,
+          "verified": true,
+          "visibility": "public"
+        }
+      ]
+    },
+    "addresses": {
+      "last-modified-date": {
+        "value": 1704067200000
+      },
+      "address": [
+        {
+          "created-date": {
+            "value": 1609459200000
+          },
+          "last-modified-date": {
+            "value": 1704067200000
+          },
+          "country": {
+            "value": "US"
+          },
+          "visibility": "public"
+        }
+      ]
+    },
+    "keywords": {
+      "last-modified-date": {
+        "value": 1704067200000
+      },
+      "keyword": [
+        {
+          "created-date": {
+            "value": 1609459200000
+          },
+          "last-modified-date": {
+            "value": 1704067200000
+          },
+          "content": "Machine Learning",
+          "visibility": "public"
+        },
+        {
+          "created-date": {
+            "value": 1609459200000
+          },
+          "last-modified-date": {
+            "value": 1704067200000
+          },
+          "content": "Healthcare AI",
+          "visibility": "public"
+        },
+        {
+          "created-date": {
+            "value": 1609459200000
+          },
+          "last-modified-date": {
+            "value": 1704067200000
+          },
+          "content": "Medical Imaging",
+          "visibility": "public"
+        },
+        {
+          "created-date": {
+            "value": 1609459200000
+          },
+          "last-modified-date": {
+            "value": 1704067200000
+          },
+          "content": "Privacy-Preserving AI",
+          "visibility": "public"
+        }
+      ]
+    },
+    "external-identifiers": {
+      "last-modified-date": {
+        "value": 1704067200000
+      },
+      "external-identifier": [
+        {
+          "created-date": {
+            "value": 1609459200000
+          },
+          "last-modified-date": {
+            "value": 1704067200000
+          },
+          "external-id-type": "Scopus Author ID",
+          "external-id-value": "56789012345",
+          "external-id-url": {
+            "value": "https://www.scopus.com/authid/detail.uri?authorId=56789012345"
+          },
+          "visibility": "public"
+        },
+        {
+          "created-date": {
+            "value": 1609459200000
+          },
+          "last-modified-date": {
+            "value": 1704067200000
+          },
+          "external-id-type": "ResearcherID",
+          "external-id-value": "A-1234-2023",
+          "external-id-url": {
+            "value": "https://www.researcherid.com/rid/A-1234-2023"
+          },
+          "visibility": "public"
+        }
+      ]
+    }
+  },
+  "activities-summary": {
+    "last-modified-date": {
+      "value": 1704067200000
+    },
+    "educations": {
+      "education-summary": [
+        {
+          "created-date": {
+            "value": 1609459200000
+          },
+          "last-modified-date": {
+            "value": 1609459200000
+          },
+          "department-name": "Computer Science",
+          "role-title": "PhD in Computer Science",
+          "organization": {
+            "name": "Massachusetts Institute of Technology",
+            "address": {
+              "city": "Cambridge",
+              "region": "MA",
+              "country": "US"
+            }
+          },
+          "start-date": {
+            "year": {
+              "value": "2010"
+            }
+          },
+          "end-date": {
+            "year": {
+              "value": "2015"
+            }
+          },
+          "visibility": "public"
+        }
+      ]
+    },
+    "employments": {
+      "employment-summary": [
+        {
+          "created-date": {
+            "value": 1609459200000
+          },
+          "last-modified-date": {
+            "value": 1704067200000
+          },
+          "department-name": "Computer Science",
+          "role-title": "Professor",
+          "organization": {
+            "name": "Stanford University",
+            "address": {
+              "city": "Stanford",
+              "region": "CA",
+              "country": "US"
+            }
+          },
+          "start-date": {
+            "year": {
+              "value": "2020"
+            }
+          },
+          "visibility": "public"
+        },
+        {
+          "created-date": {
+            "value": 1609459200000
+          },
+          "last-modified-date": {
+            "value": 1609459200000
+          },
+          "department-name": "Computer Science",
+          "role-title": "Assistant Professor",
+          "organization": {
+            "name": "Stanford University",
+            "address": {
+              "city": "Stanford",
+              "region": "CA",
+              "country": "US"
+            }
+          },
+          "start-date": {
+            "year": {
+              "value": "2015"
+            }
+          },
+          "end-date": {
+            "year": {
+              "value": "2020"
+            }
+          },
+          "visibility": "public"
+        }
+      ]
+    },
+    "works": {
+      "group": [
+        {
+          "last-modified-date": {
+            "value": 1704067200000
+          },
+          "external-ids": {
+            "external-id": [
+              {
+                "external-id-type": "doi",
+                "external-id-value": "10.1038/s41591-023-02234-x",
+                "external-id-relationship": "self"
+              }
+            ]
+          },
+          "work-summary": [
+            {
+              "created-date": {
+                "value": 1704067200000
+              },
+              "last-modified-date": {
+                "value": 1704067200000
+              },
+              "title": {
+                "title": {
+                  "value": "Machine Learning Approaches for Personalized Cancer Treatment"
+                }
+              },
+              "journal-title": {
+                "value": "Nature Medicine"
+              },
+              "type": "journal-article",
+              "publication-date": {
+                "year": {
+                  "value": "2023"
+                },
+                "month": {
+                  "value": "03"
+                }
+              },
+              "visibility": "public"
+            }
+          ]
+        }
+      ]
+    }
+  }
+}

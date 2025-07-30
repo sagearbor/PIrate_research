@@ -1,0 +1,108 @@
+# Easy Database Configuration
+# Just add a new entry here to add a new database!
+
+databases:
+  # Semantic Scholar - AI-powered academic search
+  - name: "Semantic Scholar"
+    base_url: "https://api.semanticscholar.org/graph/v1/paper/search"
+    requires_api_key: false
+    rate_limit_delay: 1.0
+    param_mapping:
+      author: "query"           # Maps our 'author' to their 'query' parameter
+      keywords: "query"         # Keywords also go to 'query'
+    result_mapping:
+      title: "title"            # Where to find paper title in their JSON response
+      authors: "authors.name"   # Where to find authors (nested)
+      year: "year"              # Where to find publication year
+      venue: "venue"            # Where to find journal/conference name
+      citations: "citationCount" # Where to find citation count
+      url: "url"                # Where to find paper URL
+      abstract: "abstract"      # Where to find abstract
+    data_path: ["data"]         # Navigate to response.data[] for results
+    default_params:
+      fields: "title,authors,year,venue,citationCount,url,abstract"
+      limit: 20
+
+  # OpenAlex - Open source academic database  
+  - name: "OpenAlex"
+    base_url: "https://api.openalex.org/works"
+    requires_api_key: false
+    rate_limit_delay: 0.1
+    param_mapping:
+      author: "filter"          # Special format: author.display_name:John Smith
+      keywords: "search"        # Keywords go to search parameter
+      institution: "filter"     # Special format: institutions.display_name:Stanford
+    result_mapping:
+      title: "title"
+      authors: "authorships.author.display_name"
+      year: "publication_year"
+      venue: "primary_location.source.display_name"
+      citations: "cited_by_count"
+      url: "doi"
+      abstract: "abstract"
+    data_path: ["results"]
+    default_params:
+      per_page: 20
+      
+  # CORE - Open Access research papers
+  - name: "CORE"
+    base_url: "https://api.core.ac.uk/v3/search/works"
+    requires_api_key: false
+    rate_limit_delay: 1.0
+    param_mapping:
+      author: "q"               # Combined query
+      keywords: "q"
+    result_mapping:
+      title: "title"
+      authors: "authors"
+      year: "yearPublished"
+      venue: "journals"
+      url: "downloadUrl"
+      abstract: "abstract"
+    data_path: ["results"]
+    default_params:
+      limit: 20
+
+  # Example for a database that requires an API key
+  - name: "Scopus"
+    base_url: "https://api.elsevier.com/content/search/scopus"
+    requires_api_key: true       # This one needs an API key
+    rate_limit_delay: 1.0
+    param_mapping:
+      author: "query"            # Use AUTHOR() function in Scopus
+      keywords: "query"
+    result_mapping:
+      title: "dc:title"
+      authors: "dc:creator"
+      year: "prism:coverDate"
+      venue: "prism:publicationName"
+      citations: "citedby-count"
+      doi: "prism:doi"
+    data_path: ["search-results", "entry"]
+    default_params:
+      httpAccept: "application/json"
+      count: 20
+
+# Template for adding new databases
+template:
+  - name: "Your Database Name"
+    base_url: "https://api.yourdatabase.com/search"
+    requires_api_key: false      # Set to true if API key needed
+    rate_limit_delay: 1.0        # Seconds between requests
+    param_mapping:
+      author: "author_param"     # What parameter name they use for author
+      keywords: "keyword_param"  # What parameter name they use for keywords
+      institution: "affil_param" # What parameter name they use for institution
+    result_mapping:
+      title: "title_field"       # JSON path to title in their response
+      authors: "authors_field"   # JSON path to authors
+      year: "year_field"         # JSON path to publication year
+      venue: "venue_field"       # JSON path to journal/conference
+      citations: "cite_field"    # JSON path to citation count
+      url: "url_field"           # JSON path to paper URL
+      abstract: "abstract_field" # JSON path to abstract
+      doi: "doi_field"           # JSON path to DOI
+    data_path: ["results"]       # Path to array of papers in response
+    default_params:              # Any default parameters to always include
+      format: "json"
+      limit: 20

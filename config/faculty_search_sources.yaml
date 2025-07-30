@@ -1,0 +1,168 @@
+# ====================================================================
+# FACULTY/ACADEMIC DATABASE SOURCES CONFIGURATION  
+# ====================================================================
+# This file configures academic databases for finding faculty publications,
+# profiles, and research data. These sources use APIs or structured endpoints.
+#
+# PREFERRED METHOD: Use Database Discovery Agent for new sources
+# 
+# Example A2A request to add new academic database:
+#   message = create_discovery_message(
+#       source_agent=AgentType.ADMIN_DASHBOARD,
+#       request_type=DiscoveryRequestType.GENERATE_BOTH,
+#       database_url="https://api.new-academic-db.org/search",
+#       database_name="New Academic Database",
+#       database_type=DatabaseType.FACULTY
+#   )
+# ====================================================================
+
+databases:
+  # Google Scholar - Most comprehensive academic search (WARNING: No official API)
+  - name: "Google Scholar"
+    base_url: "https://scholar.google.com"
+    api_key_required: false
+    rate_limit_delay: 2.0        # Be very careful with rate limits - can get blocked
+    max_retries: 3
+    search_params_mapping:       # How our search params map to their URL params
+      author: "as_sauthors"      # Author search parameter
+      institution: "as_vis"      # Institution affiliation parameter  
+      keywords: "q"              # General query parameter
+    result_parsers:              # CSS selectors to extract data (web scraping)
+      title: ".gs_rt a"          # Paper title (in result title link)
+      authors: ".gs_a"           # Author names (in author line)
+      citations: ".gs_fl a"      # Citation count (in footer links)
+      year: ".gs_a"              # Publication year (in author line)
+    headers:
+      User-Agent: "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36"
+
+  # arXiv - Physics, Math, CS, Biology preprint server (FREE API)
+  - name: "arXiv"
+    base_url: "http://export.arxiv.org/api/query"
+    api_key_required: false
+    rate_limit_delay: 3.0        # arXiv requests respectful rate limiting
+    max_retries: 3
+    search_params_mapping:       # arXiv API parameters
+      author: "au"               # Author search: au:"Last Name, First"
+      keywords: "all"            # Search all fields: all:quantum
+      category: "cat"            # Subject category: cat:cs.AI
+    result_parsers:              # XML response field mappings
+      title: "title"             # Paper title
+      authors: "author"          # Author list
+      abstract: "summary"        # Paper abstract
+      url: "id"                  # arXiv ID/URL
+      
+  # PubMed - Medical and life sciences literature (FREE API by NIH)
+  - name: "PubMed"
+    base_url: "https://eutils.ncbi.nlm.nih.gov/entrez/eutils"
+    api_key_required: false
+    rate_limit_delay: 1.0        # NCBI allows up to 3 requests/second without API key
+    max_retries: 3
+    search_params_mapping:       # E-utilities search syntax
+      author: "[Author]"         # Author search: "Smith J"[Author]
+      institution: "[Affiliation]" # Institution: "Harvard"[Affiliation]
+      keywords: "[Title/Abstract]" # Text search in title/abstract
+    result_parsers:              # XML response field mappings (after efetch)
+      title: "ArticleTitle"      # Journal article title
+      authors: "AuthorList"      # List of authors
+      journal: "Title"           # Journal name
+      year: "PubDate"            # Publication date
+      
+  - name: "ORCID"
+    base_url: "https://pub.orcid.org/v3.0"
+    api_key_required: false
+    rate_limit_delay: 1.0
+    max_retries: 3
+    search_params_mapping:
+      family_name: "family-name"
+      given_names: "given-names"
+      institution: "affiliation-org-name"
+      orcid_id: "orcid"
+    result_parsers:
+      name: "credit-name"
+      orcid: "orcid-identifier"
+      affiliations: "affiliation"
+      works: "works"
+    headers:
+      Accept: "application/json"
+      
+  - name: "Semantic Scholar"
+    base_url: "https://api.semanticscholar.org/graph/v1"
+    api_key_required: false
+    rate_limit_delay: 1.0
+    max_retries: 3
+    search_params_mapping:
+      author: "query"
+      limit: "limit"
+      fields: "fields"
+    result_parsers:
+      title: "title"
+      authors: "authors"
+      citations: "citationCount"
+      year: "year"
+      venue: "venue"
+      
+  - name: "Crossref"
+    base_url: "https://api.crossref.org/works"
+    api_key_required: false
+    rate_limit_delay: 1.0
+    max_retries: 3
+    search_params_mapping:
+      author: "query.author"
+      institution: "query.affiliation"
+      title: "query.title"
+    result_parsers:
+      title: "title"
+      authors: "author"
+      doi: "DOI"
+      journal: "container-title"
+      year: "published-online"
+    headers:
+      User-Agent: "Academic Research Tool/1.0 (mailto:research@university.edu)"
+      
+  - name: "DBLP"
+    base_url: "https://dblp.org/search/publ/api"
+    api_key_required: false
+    rate_limit_delay: 1.0
+    max_retries: 3
+    search_params_mapping:
+      author: "author"
+      venue: "venue"
+      year: "year"
+    result_parsers:
+      title: "title"
+      authors: "authors/author"
+      venue: "venue"
+      year: "year"
+      url: "url"
+    headers:
+      Accept: "application/json"
+
+# Search strategies for different academic fields
+field_strategies:
+  computer_science:
+    primary_sources: ["Google Scholar", "arXiv", "DBLP", "Semantic Scholar"]
+    keywords_boost: ["machine learning", "artificial intelligence", "computer science", "software engineering"]
+    
+  medicine:
+    primary_sources: ["PubMed", "Google Scholar", "Crossref"]
+    keywords_boost: ["medicine", "clinical", "biomedical", "health"]
+    
+  physics:
+    primary_sources: ["arXiv", "Google Scholar", "Crossref"]
+    keywords_boost: ["physics", "quantum", "theoretical", "experimental"]
+    
+  biology:
+    primary_sources: ["PubMed", "Google Scholar", "Crossref"]
+    keywords_boost: ["biology", "molecular", "genetics", "biochemistry"]
+    
+  social_sciences:
+    primary_sources: ["Google Scholar", "Crossref"]
+    keywords_boost: ["psychology", "sociology", "political science", "economics"]
+
+# Common institution name variations to help with matching
+institution_aliases:
+  "Stanford University": ["Stanford", "Stanford Univ", "Stanford U"]
+  "Massachusetts Institute of Technology": ["MIT", "Mass Inst Tech"]
+  "Harvard University": ["Harvard", "Harvard Med School", "Harvard Medical School"]
+  "University of California": ["UC", "Univ California", "U California"]
+  "National Institutes of Health": ["NIH", "Natl Inst Health"]

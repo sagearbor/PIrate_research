@@ -1,0 +1,121 @@
+{
+  "feed": {
+    "title": "ArXiv Query: search_query=au:\"John Smith\"",
+    "id": "http://arxiv.org/api/query?search_query=au:\"John Smith\"&id_list=&start=0&max_results=10",
+    "updated": "2024-01-15T00:00:00-05:00",
+    "totalResults": 3,
+    "startIndex": 0,
+    "itemsPerPage": 10,
+    "entries": [
+      {
+        "id": "http://arxiv.org/abs/2301.12345v1",
+        "title": "Quantum Machine Learning for Drug Discovery",
+        "published": "2023-01-15T18:30:00Z",
+        "updated": "2023-01-15T18:30:00Z",
+        "summary": "We present a novel quantum machine learning approach for accelerating drug discovery processes. Our method combines quantum computing principles with classical machine learning to identify potential drug compounds more efficiently.",
+        "authors": [
+          {
+            "name": "John Smith",
+            "affiliation": "Stanford University"
+          },
+          {
+            "name": "Maria Garcia",
+            "affiliation": "IBM Research"
+          }
+        ],
+        "links": [
+          {
+            "href": "http://arxiv.org/abs/2301.12345v1",
+            "rel": "alternate",
+            "type": "text/html"
+          },
+          {
+            "href": "http://arxiv.org/pdf/2301.12345v1.pdf",
+            "rel": "related",
+            "type": "application/pdf"
+          }
+        ],
+        "categories": [
+          "quant-ph",
+          "cs.LG",
+          "q-bio.BM"
+        ],
+        "primary_category": "quant-ph"
+      },
+      {
+        "id": "http://arxiv.org/abs/2212.09876v2",
+        "title": "Robust Neural Networks Against Adversarial Attacks",
+        "published": "2022-12-15T14:20:00Z",
+        "updated": "2023-01-10T09:15:00Z",
+        "summary": "This paper introduces a new defense mechanism against adversarial attacks on deep neural networks. We demonstrate improved robustness across multiple benchmarks while maintaining competitive clean accuracy.",
+        "authors": [
+          {
+            "name": "John Smith",
+            "affiliation": "Stanford University"
+          },
+          {
+            "name": "Lisa Chen",
+            "affiliation": "University of California Berkeley"
+          },
+          {
+            "name": "Ahmed Hassan",
+            "affiliation": "Stanford University"
+          }
+        ],
+        "links": [
+          {
+            "href": "http://arxiv.org/abs/2212.09876v2",
+            "rel": "alternate",
+            "type": "text/html"
+          },
+          {
+            "href": "http://arxiv.org/pdf/2212.09876v2.pdf",
+            "rel": "related",
+            "type": "application/pdf"
+          }
+        ],
+        "categories": [
+          "cs.LG",
+          "cs.CR",
+          "stat.ML"
+        ],
+        "primary_category": "cs.LG"
+      },
+      {
+        "id": "http://arxiv.org/abs/2206.54321v1",
+        "title": "Federated Learning with Differential Privacy in Healthcare",
+        "published": "2022-06-20T11:45:00Z",
+        "updated": "2022-06-20T11:45:00Z",
+        "summary": "We explore the intersection of federated learning and differential privacy in healthcare applications, providing theoretical guarantees for patient data protection while enabling collaborative machine learning.",
+        "authors": [
+          {
+            "name": "John Smith",
+            "affiliation": "Stanford University"
+          },
+          {
+            "name": "Emily Rodriguez",
+            "affiliation": "Johns Hopkins University"
+          }
+        ],
+        "links": [
+          {
+            "href": "http://arxiv.org/abs/2206.54321v1",
+            "rel": "alternate",
+            "type": "text/html"
+          },
+          {
+            "href": "http://arxiv.org/pdf/2206.54321v1.pdf",
+            "rel": "related",
+            "type": "application/pdf"
+          }
+        ],
+        "categories": [
+          "cs.LG",
+          "cs.CR",
+          "cs.CY"
+        ],
+        "primary_category": "cs.LG"
+      }
+    ]
+  }
+}

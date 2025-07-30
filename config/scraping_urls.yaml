@@ -1,0 +1,137 @@
+# ====================================================================
+# FUNDING OPPORTUNITY SOURCES CONFIGURATION
+# ====================================================================
+# This file configures web scraping for funding opportunity sources.
+# 
+# IMPORTANT: This is the legacy scraping approach. New funding sources 
+# should be added using the Database Discovery Agent via A2A protocol:
+#
+# Example A2A request:
+#   message = create_discovery_message(
+#       source_agent=AgentType.ADMIN_DASHBOARD,
+#       request_type=DiscoveryRequestType.GENERATE_BOTH,
+#       database_url="https://api.new-funding-source.gov/api/grants",
+#       database_name="New Funding Agency",
+#       database_type=DatabaseType.FUNDING
+#   )
+#
+# Each entry below represents a funding source that is scraped via HTML parsing.
+# ====================================================================
+
+urls:
+  # National Institutes of Health (NIH) - Major US medical research funder
+  - name: "NIH Grants"
+    url: "https://grants.nih.gov/funding/searchguide/index.html"
+    delay: 2.0              # Wait 2 seconds between requests (respect rate limits)
+    max_retries: 3          # Retry failed requests up to 3 times
+    headers:
+      Accept: "text/html,application/xhtml+xml,application/xml;q=0.9,*/*;q=0.8"
+    selectors:              # CSS selectors to extract data from HTML
+      container: ".search-result"      # Find all grant listings
+      title: "h3 a"                   # Grant title (inside h3 link)
+      title_link: "h3 a"             # URL to full grant details
+      description: ".search-result-desc"  # Grant description/summary
+      deadline: ".deadline"           # Application deadline
+      funding_amount: ".funding-amount"   # Award amount or budget info
+      
+  # Patient-Centered Outcomes Research Institute (PCORI) - Healthcare research
+  - name: "PCORI Funding"
+    url: "https://www.pcori.org/funding-opportunities"
+    delay: 2.0
+    max_retries: 3
+    selectors:
+      container: ".funding-opportunity"     # Main container for each opportunity
+      title: "h2 a"                        # Opportunity title (h2 with link)
+      title_link: "h2 a"                   # Link to full opportunity details
+      description: ".opportunity-summary"   # Brief description of opportunity
+      deadline: ".application-deadline"    # When applications are due
+      funding_type: ".opportunity-type"    # Type of research funding
+      
+  # National Science Foundation (NSF) - Broad scientific research funding
+  - name: "NSF Funding"
+    url: "https://www.nsf.gov/funding/"
+    delay: 2.0
+    max_retries: 3
+    selectors:
+      container: ".funding-opp"            # NSF opportunity container
+      title: "h3 a"                       # Program/opportunity title
+      title_link: "h3 a"
+      description: ".opp-description"      # What the program funds
+      deadline: ".deadline-date"           # Application deadlines
+      program: ".program-name"             # Specific NSF program name
+      
+  # Department of Energy (DOE) - Energy and physical sciences research
+  - name: "DOE Science Funding"
+    url: "https://science.osti.gov/grants/FOAs-Open"
+    delay: 2.0
+    max_retries: 3
+    selectors:
+      container: ".foa-listing"            # Funding Opportunity Announcement
+      title: "h4 a"                       # FOA title
+      title_link: "h4 a"
+      description: ".foa-description"      # Research area description
+      deadline: ".close-date"              # FOA closing date
+      office: ".sponsoring-office"         # Which DOE office sponsors this
+      
+  # Gates Foundation - Global health and development
+  - name: "Gates Foundation"
+    url: "https://www.gatesfoundation.org/about/committed-grants"
+    delay: 2.0
+    max_retries: 3
+    selectors:
+      container: ".grant-item"             # Individual grant listing
+      title: "h3"                         # Grant/program title
+      description: ".grant-description"    # What the grant supports
+      amount: ".grant-amount"              # Funding amount awarded
+      date: ".grant-date"                  # When grant was awarded
+      
+  # Robert Wood Johnson Foundation (RWJF) - Health policy and public health
+  - name: "Robert Wood Johnson Foundation"
+    url: "https://www.rwjf.org/en/grants/funding-opportunities.html"
+    delay: 2.0
+    max_retries: 3
+    selectors:
+      container: ".funding-opportunity"    # RWJF opportunity container
+      title: "h3 a"                       # Opportunity title with link
+      title_link: "h3 a"
+      description: ".opportunity-description"  # Description of funding focus
+      deadline: ".deadline"                # Application deadline
+      focus_area: ".focus-area"            # RWJF priority area (health equity, etc.)
+
+# ====================================================================
+# ADDING NEW FUNDING SOURCES
+# ====================================================================
+# 
+# RECOMMENDED APPROACH: Use Database Discovery Agent (supports APIs and websites)
+#
+# 1. For API-based funding sources:
+#    ingestion_agent.add_new_database(
+#        database_url="https://api.grants.gov/v1/opportunities",
+#        database_name="Grants.gov API", 
+#        database_type="funding"
+#    )
+#
+# 2. For website-based sources (like above):
+#    Add manually to this file following the pattern above:
+#    - name: "Your Funding Source"
+#      url: "https://example.org/grants"
+#      delay: 2.0
+#      max_retries: 3
+#      selectors:
+#        container: ".grant-listing"       # Main container selector
+#        title: "h2"                      # Title selector
+#        description: ".description"       # Description selector
+#        deadline: ".deadline"             # Deadline selector
+#
+# 3. Required fields for funding sources:
+#    - title: Grant/opportunity title
+#    - description: What the funding supports
+#    - deadline: Application deadline
+#    Optional fields:
+#    - funding_amount: Award amount
+#    - agency: Funding agency name
+#    - program: Specific program name
+#    - eligibility: Who can apply
+#    - focus_area: Research focus area
+#
+# ====================================================================
