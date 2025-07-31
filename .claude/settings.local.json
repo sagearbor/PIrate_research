@@ -5,7 +5,8 @@
       "Bash(python -m pytest tests/ -v)",
       "Bash(pip install:*)",
       "Bash(python -m pytest tests/test_database_discovery_agent.py -v)",
-      "Bash(python -m pytest tests/test_database_discovery_agent.py::TestDatabaseDiscoveryAgent::test_error_handling -v)"
+      "Bash(python -m pytest tests/test_database_discovery_agent.py::TestDatabaseDiscoveryAgent::test_error_handling -v)",
+      "Bash(find:*)"
     ],
     "deny": []
   }
