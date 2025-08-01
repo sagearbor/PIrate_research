@@ -1,0 +1,235 @@
+{
+  "test_cases": [
+    {
+      "name": "Perfect Match - AI Healthcare",
+      "faculty_id": "faculty_001",
+      "funding_id": "NIH-2024-AI-HEALTHCARE-001",
+      "expected_scores": {
+        "research_alignment": 0.95,
+        "methodology_match": 0.85,
+        "career_stage_fit": 1.0,
+        "deadline_urgency": 0.8,
+        "budget_alignment": 0.9,
+        "total_score_range": [0.85, 0.95]
+      },
+      "description": "Dr. Martinez (AI/ML in healthcare) matches perfectly with NIH AI Healthcare grant"
+    },
+    {
+      "name": "Good Match - Biomedical Devices",
+      "faculty_id": "faculty_002",
+      "funding_id": "NSF-2024-DEVICE-INNOVATION-002",
+      "expected_scores": {
+        "research_alignment": 0.9,
+        "methodology_match": 1.0,
+        "career_stage_fit": 1.0,
+        "deadline_urgency": 0.75,
+        "budget_alignment": 0.8,
+        "total_score_range": [0.8, 0.9]
+      },
+      "description": "Dr. Chen (biomedical engineering) matches well with NSF device innovation grant"
+    },
+    {
+      "name": "Excellent Match - Neurodegeneration",
+      "faculty_id": "faculty_003",
+      "funding_id": "NIA-2024-NEURODEGENERATION-003",
+      "expected_scores": {
+        "research_alignment": 1.0,
+        "methodology_match": 0.9,
+        "career_stage_fit": 1.0,
+        "deadline_urgency": 0.9,
+        "budget_alignment": 0.85,
+        "total_score_range": [0.9, 0.98]
+      },
+      "description": "Dr. Rodriguez (neuroscience/Alzheimer's) matches excellently with NIA neurodegeneration program"
+    },
+    {
+      "name": "Perfect Match - Computational Biology",
+      "faculty_id": "faculty_004",
+      "funding_id": "NIGMS-2024-COMPBIO-EARLY-004",
+      "expected_scores": {
+        "research_alignment": 0.95,
+        "methodology_match": 1.0,
+        "career_stage_fit": 1.0,
+        "deadline_urgency": 0.7,
+        "budget_alignment": 0.7,
+        "total_score_range": [0.8, 0.9]
+      },
+      "description": "Dr. Liu (computational biology) matches perfectly with NIGMS computational biology grant"
+    },
+    {
+      "name": "Good Match - Public Health Informatics",
+      "faculty_id": "faculty_005",
+      "funding_id": "CDC-2024-PUBHEALTH-INFORMATICS-005",
+      "expected_scores": {
+        "research_alignment": 0.85,
+        "methodology_match": 0.8,
+        "career_stage_fit": 1.0,
+        "deadline_urgency": 0.6,
+        "budget_alignment": 0.9,
+        "total_score_range": [0.75, 0.85]
+      },
+      "description": "Dr. Kowalski (public health) matches well with CDC public health informatics initiative"
+    },
+    {
+      "name": "Poor Match - Career Stage Mismatch",
+      "faculty_id": "faculty_005",
+      "funding_id": "NIA-2024-NEURODEGENERATION-003",
+      "expected_scores": {
+        "research_alignment": 0.3,
+        "methodology_match": 0.6,
+        "career_stage_fit": 0.0,
+        "deadline_urgency": 0.9,
+        "budget_alignment": 0.4,
+        "total_score_range": [0.2, 0.4]
+      },
+      "description": "Dr. Kowalski (postdoc) doesn't meet career stage requirements for NIA neurodegeneration (associate+ only)"
+    },
+    {
+      "name": "Moderate Match - Research Area Overlap",
+      "faculty_id": "faculty_001",
+      "funding_id": "CDC-2024-PUBHEALTH-INFORMATICS-005",
+      "expected_scores": {
+        "research_alignment": 0.6,
+        "methodology_match": 0.5,
+        "career_stage_fit": 1.0,
+        "deadline_urgency": 0.6,
+        "budget_alignment": 0.8,
+        "total_score_range": [0.55, 0.7]
+      },
+      "description": "Dr. Martinez (AI/healthcare) has some overlap with public health informatics but not primary focus"
+    },
+    {
+      "name": "Low Match - Methodology Mismatch",
+      "faculty_id": "faculty_004",
+      "funding_id": "NSF-2024-DEVICE-INNOVATION-002",
+      "expected_scores": {
+        "research_alignment": 0.3,
+        "methodology_match": 0.3,
+        "career_stage_fit": 1.0,
+        "deadline_urgency": 0.75,
+        "budget_alignment": 0.6,
+        "total_score_range": [0.35, 0.5]
+      },
+      "description": "Dr. Liu (computational/theoretical) doesn't match well with experimental device research"
+    }
+  ],
+  "scoring_weights": {
+    "research_alignment": 0.35,
+    "methodology_match": 0.25,
+    "career_stage_fit": 0.20,
+    "deadline_urgency": 0.15,
+    "budget_alignment": 0.05
+  },
+  "methodology_compatibility_tests": [
+    {
+      "faculty_methodologies": ["experimental"],
+      "funding_methodologies": ["experimental"],
+      "expected_score": 1.0
+    },
+    {
+      "faculty_methodologies": ["experimental"],
+      "funding_methodologies": ["clinical"],
+      "expected_score": 0.8
+    },
+    {
+      "faculty_methodologies": ["computational"],
+      "funding_methodologies": ["theoretical"],
+      "expected_score": 0.8
+    },
+    {
+      "faculty_methodologies": ["computational"],
+      "funding_methodologies": ["experimental"],
+      "expected_score": 0.4
+    },
+    {
+      "faculty_methodologies": ["qualitative", "mixed_methods"],
+      "funding_methodologies": ["mixed_methods"],
+      "expected_score": 0.9
+    },
+    {
+      "faculty_methodologies": ["theoretical"],
+      "funding_methodologies": ["clinical"],
+      "expected_score": 0.2
+    }
+  ],
+  "career_stage_compatibility_tests": [
+    {
+      "faculty_stage": "assistant_professor",
+      "eligible_stages": ["assistant_professor", "associate_professor"],
+      "expected_score": 1.0
+    },
+    {
+      "faculty_stage": "postdoc",
+      "eligible_stages": ["assistant_professor", "associate_professor"],
+      "expected_score": 0.7
+    },
+    {
+      "faculty_stage": "full_professor",
+      "eligible_stages": ["assistant_professor", "associate_professor"],
+      "expected_score": 0.0
+    },
+    {
+      "faculty_stage": "graduate_student",
+      "eligible_stages": ["postdoc", "assistant_professor"],
+      "expected_score": 0.7
+    },
+    {
+      "faculty_stage": "research_scientist",
+      "eligible_stages": ["research_scientist", "assistant_professor"],
+      "expected_score": 1.0
+    }
+  ],
+  "deadline_urgency_tests": [
+    {
+      "days_remaining": 45,
+      "expected_score_range": [0.8, 1.0],
+      "description": "Optimal urgency - enough time to prepare"
+    },
+    {
+      "days_remaining": 15,
+      "expected_score_range": [0.1, 0.3],
+      "description": "Too urgent - insufficient preparation time"
+    },
+    {
+      "days_remaining": 120,
+      "expected_score_range": [0.8, 1.0],
+      "description": "Good timing - adequate preparation time"
+    },
+    {
+      "days_remaining": 365,
+      "expected_score_range": [0.3, 0.5],
+      "description": "Far deadline - lower urgency"
+    },
+    {
+      "days_remaining": -5,
+      "expected_score": 0.0,
+      "description": "Past deadline - impossible to apply"
+    }
+  ],
+  "research_alignment_tests": [
+    {
+      "faculty_interests": ["machine learning", "artificial intelligence", "healthcare"],
+      "funding_areas": ["artificial intelligence", "machine learning", "medical AI"],
+      "expected_score_range": [0.8, 1.0],
+      "description": "High overlap in AI/ML terms"
+    },
+    {
+      "faculty_interests": ["neuroscience", "brain imaging", "alzheimer's disease"],
+      "funding_areas": ["neurodegenerative diseases", "alzheimer's disease", "brain"],
+      "expected_score_range": [0.7, 0.9],
+      "description": "Good overlap in neuroscience terms"
+    },
+    {
+      "faculty_interests": ["computer science", "algorithms"],
+      "funding_areas": ["biology", "genetics", "medical research"],
+      "expected_score_range": [0.0, 0.2],
+      "description": "Little to no overlap between CS and biology"
+    },
+    {
+      "faculty_interests": ["public health", "epidemiology", "health disparities"],
+      "funding_areas": ["population health", "health equity", "surveillance"],
+      "expected_score_range": [0.5, 0.8],
+      "description": "Moderate overlap with related but different terminology"
+    }
+  ]
+}

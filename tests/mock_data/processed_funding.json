@@ -1,0 +1,300 @@
+[
+  {
+    "title": "AI for Healthcare Innovation Grant",
+    "agency": "National Institutes of Health",
+    "opportunity_id": "NIH-2024-AI-HEALTHCARE-001",
+    "total_budget": "5000000.00",
+    "max_award_amount": "500000.00",
+    "min_award_amount": "50000.00",
+    "currency": "USD",
+    "deadline": "2025-09-15",
+    "award_start_date": "2025-07-01",
+    "project_duration_months": 36,
+    "eligible_career_stages": [
+      "assistant_professor",
+      "associate_professor",
+      "full_professor"
+    ],
+    "eligible_institutions": [
+      "research_university",
+      "medical_school",
+      "teaching_hospital"
+    ],
+    "citizenship_requirements": [
+      "US_citizen",
+      "permanent_resident"
+    ],
+    "research_areas": [
+      "artificial intelligence",
+      "machine learning",
+      "healthcare informatics",
+      "medical imaging",
+      "clinical decision support"
+    ],
+    "preferred_methodologies": [
+      "experimental",
+      "computational",
+      "clinical"
+    ],
+    "keywords": [
+      "AI",
+      "healthcare",
+      "clinical trials",
+      "medical AI",
+      "patient outcomes"
+    ],
+    "description": "This grant supports innovative research applying artificial intelligence and machine learning techniques to improve healthcare outcomes. Projects should demonstrate clear clinical relevance and potential for translation to practice. Interdisciplinary collaborations are encouraged.",
+    "url": "https://grants.nih.gov/grants/guide/rfa/AI-24-001.html",
+    "source": "NIH",
+    "is_active": true
+  },
+  {
+    "title": "Biomedical Device Innovation Challenge",
+    "agency": "National Science Foundation",
+    "opportunity_id": "NSF-2024-DEVICE-INNOVATION-002",
+    "total_budget": "2000000.00",
+    "max_award_amount": "250000.00",
+    "min_award_amount": "75000.00",
+    "currency": "USD",
+    "deadline": "2025-10-30",
+    "award_start_date": "2025-09-01",
+    "project_duration_months": 24,
+    "eligible_career_stages": [
+      "assistant_professor",
+      "associate_professor",
+      "full_professor",
+      "research_scientist"
+    ],
+    "eligible_institutions": [
+      "research_university",
+      "engineering_school"
+    ],
+    "citizenship_requirements": [
+      "US_citizen",
+      "permanent_resident"
+    ],
+    "research_areas": [
+      "biomedical engineering",
+      "medical devices",
+      "wearable technology",
+      "signal processing",
+      "health monitoring"
+    ],
+    "preferred_methodologies": [
+      "experimental",
+      "clinical"
+    ],
+    "keywords": [
+      "biomedical devices",
+      "innovation",
+      "wearable sensors",
+      "health technology",
+      "medical engineering"
+    ],
+    "description": "This challenge seeks breakthrough innovations in biomedical device technology with potential for clinical translation. Focus areas include wearable health monitors, diagnostic devices, and therapeutic technologies.",
+    "url": "https://nsf.gov/funding/pgm_summ.jsp?pims_id=504851",
+    "source": "NSF",
+    "is_active": true
+  },
+  {
+    "title": "Neurodegenerative Disease Research Program",
+    "agency": "National Institute on Aging",
+    "opportunity_id": "NIA-2024-NEURODEGENERATION-003",
+    "total_budget": "10000000.00",
+    "max_award_amount": "750000.00",
+    "min_award_amount": "100000.00",
+    "currency": "USD",
+    "deadline": "2025-08-28",
+    "award_start_date": "2025-06-01",
+    "project_duration_months": 60,
+    "eligible_career_stages": [
+      "associate_professor",
+      "full_professor",
+      "research_scientist"
+    ],
+    "eligible_institutions": [
+      "research_university",
+      "medical_school",
+      "research_institute"
+    ],
+    "citizenship_requirements": [
+      "US_citizen",
+      "permanent_resident"
+    ],
+    "research_areas": [
+      "neurodegenerative diseases",
+      "alzheimer's disease",
+      "parkinson's disease",
+      "brain imaging",
+      "cognitive neuroscience",
+      "neuroinflammation"
+    ],
+    "preferred_methodologies": [
+      "clinical",
+      "experimental",
+      "observational"
+    ],
+    "keywords": [
+      "neurodegeneration",
+      "alzheimer's",
+      "brain",
+      "aging",
+      "biomarkers",
+      "therapeutics"
+    ],
+    "description": "This program supports comprehensive research into neurodegenerative diseases, with emphasis on understanding disease mechanisms, developing biomarkers, and advancing therapeutic interventions. Longitudinal studies and clinical trials are particularly encouraged.",
+    "url": "https://grants.nih.gov/grants/guide/pa/NIA-24-003.html",
+    "source": "NIA",
+    "is_active": true
+  },
+  {
+    "title": "Computational Biology Early Career Grant",
+    "agency": "National Institute of General Medical Sciences",
+    "opportunity_id": "NIGMS-2024-COMPBIO-EARLY-004",
+    "total_budget": "3000000.00",
+    "max_award_amount": "150000.00",
+    "min_award_amount": "50000.00",
+    "currency": "USD",
+    "deadline": "2025-11-15",
+    "award_start_date": "2025-08-01",
+    "project_duration_months": 36,
+    "eligible_career_stages": [
+      "postdoc",
+      "assistant_professor",
+      "research_scientist"
+    ],
+    "eligible_institutions": [
+      "research_university",
+      "research_institute"
+    ],
+    "citizenship_requirements": [
+      "US_citizen",
+      "permanent_resident"
+    ],
+    "research_areas": [
+      "computational biology",
+      "bioinformatics",
+      "genomics",
+      "systems biology",
+      "precision medicine"
+    ],
+    "preferred_methodologies": [
+      "computational",
+      "theoretical"
+    ],
+    "keywords": [
+      "computational biology",
+      "bioinformatics",
+      "genomics",
+      "algorithms",
+      "data analysis",
+      "machine learning"
+    ],
+    "description": "This grant supports early-career researchers developing computational approaches to biological problems. Projects should demonstrate novel algorithmic or methodological contributions to understanding biological systems.",
+    "url": "https://grants.nih.gov/grants/guide/pa/NIGMS-24-004.html",
+    "source": "NIGMS",
+    "is_active": true
+  },
+  {
+    "title": "Public Health Informatics Initiative",
+    "agency": "Centers for Disease Control and Prevention",
+    "opportunity_id": "CDC-2024-PUBHEALTH-INFORMATICS-005",
+    "total_budget": "4000000.00",
+    "max_award_amount": "200000.00",
+    "min_award_amount": "25000.00",
+    "currency": "USD",
+    "deadline": "2025-12-30",
+    "award_start_date": "2025-10-01",
+    "project_duration_months": 24,
+    "eligible_career_stages": [
+      "postdoc",
+      "assistant_professor",
+      "associate_professor",
+      "research_scientist"
+    ],
+    "eligible_institutions": [
+      "research_university",
+      "public_health_school",
+      "government_agency"
+    ],
+    "citizenship_requirements": [
+      "US_citizen",
+      "permanent_resident"
+    ],
+    "research_areas": [
+      "public health informatics",
+      "epidemiology",
+      "health disparities",
+      "population health",
+      "digital health",
+      "health surveillance"
+    ],
+    "preferred_methodologies": [
+      "observational",
+      "survey",
+      "mixed_methods",
+      "computational"
+    ],
+    "keywords": [
+      "public health",
+      "informatics",
+      "surveillance",
+      "population health",
+      "health equity",
+      "digital health"
+    ],
+    "description": "This initiative supports research in public health informatics, focusing on improving population health outcomes through innovative use of health data and technology. Projects addressing health disparities and surveillance systems are particularly encouraged.",
+    "url": "https://cdc.gov/funding/announcements/pubhealth-informatics-2024.html",
+    "source": "CDC",
+    "is_active": true
+  },
+  {
+    "title": "Aging and Technology Research Grant",
+    "agency": "National Institute on Aging",
+    "opportunity_id": "NIA-2024-AGING-TECH-006",
+    "total_budget": "1500000.00",
+    "max_award_amount": "300000.00",
+    "min_award_amount": "50000.00",
+    "currency": "USD",
+    "deadline": "2025-08-31",
+    "award_start_date": "2025-05-01",
+    "project_duration_months": 36,
+    "eligible_career_stages": [
+      "assistant_professor",
+      "associate_professor",
+      "full_professor"
+    ],
+    "eligible_institutions": [
+      "research_university",
+      "medical_school"
+    ],
+    "citizenship_requirements": [
+      "US_citizen",
+      "permanent_resident"
+    ],
+    "research_areas": [
+      "aging",
+      "gerontechnology",
+      "assistive technology",
+      "cognitive aging",
+      "health technology"
+    ],
+    "preferred_methodologies": [
+      "experimental",
+      "clinical",
+      "mixed_methods"
+    ],
+    "keywords": [
+      "aging",
+      "technology",
+      "older adults",
+      "assistive devices",
+      "cognitive health",
+      "independence"
+    ],
+    "description": "This grant supports research on technology solutions for healthy aging, including assistive technologies, cognitive support systems, and health monitoring tools for older adults. Interdisciplinary approaches are encouraged.",
+    "url": "https://grants.nih.gov/grants/guide/rfa/NIA-24-006.html",
+    "source": "NIA",
+    "is_active": true
+  }
+]

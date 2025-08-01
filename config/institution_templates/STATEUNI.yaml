@@ -1,0 +1,205 @@
+# Configuration for State University
+# Example institutional configuration
+
+institution_name: "State University"
+institution_code: "STATEUNI"
+country: "United States"
+timezone: "America/New_York"
+
+# Administrative Contacts
+admin_contact: "research-admin@stateuni.edu"
+system_admin: "it-support@stateuni.edu"
+support_email: "faculty-support@stateuni.edu"
+
+# Research Areas and Priorities - Focus on STEM and Health Sciences
+primary_research_areas:
+  - "computer science"
+  - "engineering"
+  - "biomedical sciences"
+  - "public health"
+  - "environmental science"
+  - "data science"
+  - "artificial intelligence"
+
+excluded_research_areas:
+  - "defense-related classified research"
+  - "tobacco industry research"
+
+research_keywords:
+  - "machine learning"
+  - "biotechnology"
+  - "sustainable technology"
+  - "healthcare informatics"
+  - "climate science"
+  - "renewable energy"
+  - "precision medicine"
+  - "smart cities"
+  - "cybersecurity"
+
+# Funding Source Configuration - Prioritizing health and technology
+funding_sources:
+  nih:
+    name: "National Institutes of Health"
+    base_url: "https://reporter.nih.gov/"
+    enabled: true
+    priority: 1
+    scraping_frequency_hours: 12  # More frequent for high priority
+    custom_parameters:
+      include_clinical_trials: true
+      min_award_amount: 75000
+      preferred_institutes:
+        - "NIGMS"
+        - "NCI"
+        - "NHLBI"
+        - "NIAID"
+    eligibility_keywords:
+      - "health"
+      - "biomedical"
+      - "clinical"
+      - "medical"
+      - "precision medicine"
+
+  nsf:
+    name: "National Science Foundation"
+    base_url: "https://www.nsf.gov/funding/"
+    enabled: true
+    priority: 2
+    scraping_frequency_hours: 24
+    custom_parameters:
+      include_educational: true
+      focus_directorates:
+        - "CISE"  # Computer & Information Science & Engineering
+        - "ENG"   # Engineering
+        - "BIO"   # Biological Sciences
+        - "GEO"   # Geosciences
+    eligibility_keywords:
+      - "computer science"
+      - "engineering"
+      - "data science"
+      - "artificial intelligence"
+
+  doe:
+    name: "Department of Energy"
+    base_url: "https://www.energy.gov/science/funding-opportunities"
+    enabled: true
+    priority: 3
+    scraping_frequency_hours: 48
+    custom_parameters:
+      focus_areas:
+        - "renewable energy"
+        - "energy storage"
+        - "smart grid"
+        - "environmental cleanup"
+
+  pcori:
+    name: "Patient-Centered Outcomes Research Institute"
+    base_url: "https://www.pcori.org/funding-opportunities"
+    enabled: true
+    priority: 4
+    scraping_frequency_hours: 48
+    custom_parameters:
+      patient_centered_focus: true
+    eligibility_keywords:
+      - "patient outcomes"
+      - "comparative effectiveness"
+      - "health services"
+
+# Faculty Data Sources
+faculty_data_sources:
+  google_scholar:
+    name: "Google Scholar"
+    source_type: "google_scholar"
+    enabled: true
+    update_frequency_hours: 168  # Weekly
+    rate_limit_per_hour: 150
+    custom_parameters:
+      search_depth: "comprehensive"
+      include_citations: true
+      min_h_index: 5
+
+  orcid:
+    name: "ORCID"
+    source_type: "orcid"
+    base_url: "https://pub.orcid.org/"
+    enabled: true
+    update_frequency_hours: 168
+    rate_limit_per_hour: 75
+    custom_parameters:
+      include_affiliations: true
+      include_funding_history: true
+
+  institutional:
+    name: "State University Faculty Directory"
+    source_type: "institutional"
+    enabled: true
+    update_frequency_hours: 12  # More frequent for internal data
+    rate_limit_per_hour: 2000
+    custom_parameters:
+      directory_url: "https://directory.stateuni.edu/faculty"
+      include_emeritus: true
+      departments:
+        - "Computer Science"
+        - "Biomedical Engineering"
+        - "Public Health"
+        - "Environmental Science"
+        - "Data Science"
+
+# Notification Settings
+notification_preferences:
+  - "email"
+
+notification_frequency: "daily"
+notification_template_override: "/templates/stateuni_notification.html"
+
+# Matching and Scoring Configuration
+matching_algorithm: "multi_dimensional_v1"
+minimum_match_score: 0.65  # Slightly higher threshold
+
+career_stage_weights:
+  graduate_student: 0.7    # Lower priority for grad students
+  postdoc: 0.9
+  assistant_professor: 1.0  # Highest priority for early career
+  associate_professor: 0.9
+  full_professor: 0.7
+  emeritus: 0.2            # Lower priority for emeritus
+  research_scientist: 0.85
+
+# System Behavior Configuration
+auto_notification_enabled: true
+batch_processing_enabled: true
+analytics_enabled: true
+external_integrations_enabled: true
+
+# Data Retention and Privacy
+data_retention_days: 545  # 18 months
+anonymize_data: true       # Privacy-conscious
+gdpr_compliance: false     # US institution
+
+# API and Integration Settings
+api_rate_limits:
+  per_minute: 100
+  per_hour: 2000
+  per_day: 20000
+
+webhook_endpoints:
+  slack_research: "https://hooks.slack.com/services/T00000000/B00000000/XXXXXXXXXXXXXXXXXXXXXXXX"
+
+# Custom Fields - State University specific
+custom_fields:
+  institution_type: "public_research_university"
+  Carnegie_classification: "R1"
+  student_enrollment: 32000
+  faculty_count: 1800
+  research_expenditures: 450000000  # $450M annually
+  medical_school: true
+  engineering_school: true
+  business_school: true
+  preferred_collaboration_radius_miles: 100
+  industry_partnerships: true
+  startup_incubator: true
+  technology_transfer_office: "tto@stateuni.edu"
+
+# Configuration Metadata
+config_version: "1.0.0"
+created_date: "2025-01-31T15:30:00"
+last_updated: "2025-01-31T15:30:00"

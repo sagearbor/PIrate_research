@@ -1,0 +1,102 @@
+[
+  {
+    "match_id": "match_faculty_001_NIH-2024-AI-HEALTHCARE-001_20241231_120000",
+    "faculty_profile_id": "faculty_001",
+    "funding_opportunity_id": "NIH-2024-AI-HEALTHCARE-001",
+    "match_score": {
+      "total_score": 0.85,
+      "research_alignment": 0.90,
+      "methodology_match": 0.80,
+      "career_stage_fit": 1.0,
+      "deadline_urgency": 0.75,
+      "budget_alignment": 0.80,
+      "scoring_algorithm": "MatchingEngine-v1.0-20241231",
+      "calculated_date": "2024-12-31T12:00:00"
+    },
+    "status": "pending",
+    "notification_sent": false,
+    "faculty_response": null,
+    "created_date": "2024-12-31T12:00:00",
+    "last_updated": "2024-12-31T12:00:00"
+  },
+  {
+    "match_id": "match_faculty_002_NSF-2024-DEVICE-INNOVATION-002_20241231_120001",
+    "faculty_profile_id": "faculty_002",
+    "funding_opportunity_id": "NSF-2024-DEVICE-INNOVATION-002",
+    "match_score": {
+      "total_score": 0.92,
+      "research_alignment": 0.95,
+      "methodology_match": 0.90,
+      "career_stage_fit": 1.0,
+      "deadline_urgency": 0.80,
+      "budget_alignment": 0.85,
+      "scoring_algorithm": "MatchingEngine-v1.0-20241231",
+      "calculated_date": "2024-12-31T12:00:00"
+    },
+    "status": "pending",
+    "notification_sent": false,
+    "faculty_response": null,
+    "created_date": "2024-12-31T12:00:00",
+    "last_updated": "2024-12-31T12:00:00"
+  },
+  {
+    "match_id": "match_faculty_003_NIA-2024-NEURODEGENERATION-003_20241231_120002",
+    "faculty_profile_id": "faculty_003",
+    "funding_opportunity_id": "NIA-2024-NEURODEGENERATION-003",
+    "match_score": {
+      "total_score": 0.88,
+      "research_alignment": 0.95,
+      "methodology_match": 0.85,
+      "career_stage_fit": 1.0,
+      "deadline_urgency": 0.70,
+      "budget_alignment": 0.90,
+      "scoring_algorithm": "MatchingEngine-v1.0-20241231",
+      "calculated_date": "2024-12-31T12:00:00"
+    },
+    "status": "pending",
+    "notification_sent": false,
+    "faculty_response": null,
+    "created_date": "2024-12-31T12:00:00",
+    "last_updated": "2024-12-31T12:00:00"
+  },
+  {
+    "match_id": "match_faculty_004_NIGMS-2024-COMPBIO-EARLY-004_20241231_120003",
+    "faculty_profile_id": "faculty_004",
+    "funding_opportunity_id": "NIGMS-2024-COMPBIO-EARLY-004",
+    "match_score": {
+      "total_score": 0.78,
+      "research_alignment": 0.85,
+      "methodology_match": 0.95,
+      "career_stage_fit": 0.70,
+      "deadline_urgency": 0.65,
+      "budget_alignment": 0.75,
+      "scoring_algorithm": "MatchingEngine-v1.0-20241231",
+      "calculated_date": "2024-12-31T12:00:00"
+    },
+    "status": "pending",
+    "notification_sent": false,
+    "faculty_response": null,
+    "created_date": "2024-12-31T12:00:00",
+    "last_updated": "2024-12-31T12:00:00"
+  },
+  {
+    "match_id": "match_faculty_005_CDC-2024-PUBHEALTH-INFORMATICS-005_20241231_120004",
+    "faculty_profile_id": "faculty_005",
+    "funding_opportunity_id": "CDC-2024-PUBHEALTH-INFORMATICS-005",
+    "match_score": {
+      "total_score": 0.73,
+      "research_alignment": 0.80,
+      "methodology_match": 0.85,
+      "career_stage_fit": 0.60,
+      "deadline_urgency": 0.90,
+      "budget_alignment": 0.70,
+      "scoring_algorithm": "MatchingEngine-v1.0-20241231",
+      "calculated_date": "2024-12-31T12:00:00"
+    },
+    "status": "pending",
+    "notification_sent": false,
+    "faculty_response": null,
+    "created_date": "2024-12-31T12:00:00",
+    "last_updated": "2024-12-31T12:00:00"
+  }
+]

@@ -1,0 +1,224 @@
+[
+  {
+    "name": "Dr. Sarah Martinez",
+    "email": "sarah.martinez@university.edu",
+    "institution": "Research University",
+    "department": "Computer Science",
+    "career_stage": "assistant_professor",
+    "research_interests": [
+      "machine learning",
+      "artificial intelligence",
+      "healthcare informatics",
+      "natural language processing"
+    ],
+    "methodologies": [
+      "experimental",
+      "computational"
+    ],
+    "publications": [
+      {
+        "title": "Deep Learning for Medical Image Analysis",
+        "authors": ["Martinez, S.", "Johnson, R.", "Chen, L."],
+        "journal": "Nature Medicine",
+        "year": 2023,
+        "doi": "10.1038/s41591-023-01234-5",
+        "citation_count": 24,
+        "keywords": ["deep learning", "medical imaging", "computer vision"]
+      },
+      {
+        "title": "NLP Applications in Clinical Decision Support",
+        "authors": ["Martinez, S.", "Williams, A."],
+        "journal": "Journal of Medical Internet Research",
+        "year": 2022,
+        "citation_count": 18,
+        "keywords": ["natural language processing", "clinical decision support", "healthcare"]
+      }
+    ],
+    "orcid_id": "0000-0002-1234-5678",
+    "google_scholar_id": "ABC123DEF456",
+    "institutional_profile_url": "https://cs.university.edu/faculty/martinez",
+    "h_index": 12,
+    "total_citations": 285,
+    "years_active": 5,
+    "profile_id": "faculty_001",
+    "data_sources": ["google_scholar", "orcid", "institutional_website"]
+  },
+  {
+    "name": "Dr. Michael Chen",
+    "email": "m.chen@techuni.edu",
+    "institution": "Technology University",
+    "department": "Biomedical Engineering",
+    "career_stage": "associate_professor",
+    "research_interests": [
+      "biomedical devices",
+      "signal processing",
+      "machine learning",
+      "wearable technology"
+    ],
+    "methodologies": [
+      "experimental",
+      "clinical"
+    ],
+    "publications": [
+      {
+        "title": "Wearable Sensors for Continuous Health Monitoring",
+        "authors": ["Chen, M.", "Davis, K.", "Thompson, R."],
+        "journal": "IEEE Transactions on Biomedical Engineering",
+        "year": 2023,
+        "doi": "10.1109/TBME.2023.12345",
+        "citation_count": 32,
+        "keywords": ["wearable sensors", "health monitoring", "signal processing"]
+      },
+      {
+        "title": "Machine Learning for Cardiac Arrhythmia Detection",
+        "authors": ["Chen, M.", "Lopez, A."],
+        "journal": "Nature Biomedical Engineering",
+        "year": 2022,
+        "citation_count": 45,
+        "keywords": ["cardiac monitoring", "arrhythmia detection", "machine learning"]
+      }
+    ],
+    "orcid_id": "0000-0003-2345-6789",
+    "google_scholar_id": "DEF456GHI789",
+    "institutional_profile_url": "https://bme.techuni.edu/faculty/chen",
+    "h_index": 18,
+    "total_citations": 542,
+    "years_active": 8,
+    "profile_id": "faculty_002",
+    "data_sources": ["google_scholar", "orcid", "institutional_website"]
+  },
+  {
+    "name": "Dr. Emily Rodriguez",
+    "email": "e.rodriguez@medschool.edu",
+    "institution": "Medical School University",
+    "department": "Neuroscience",
+    "career_stage": "full_professor",
+    "research_interests": [
+      "neurodegenerative diseases",
+      "alzheimer's disease",
+      "brain imaging",
+      "cognitive neuroscience"
+    ],
+    "methodologies": [
+      "clinical",
+      "observational",
+      "experimental"
+    ],
+    "publications": [
+      {
+        "title": "Early Detection of Alzheimer's Disease Using Brain Imaging",
+        "authors": ["Rodriguez, E.", "Smith, J.", "Brown, L.", "Wilson, M."],
+        "journal": "The Lancet Neurology",
+        "year": 2023,
+        "doi": "10.1016/S1474-4422(23)00123-4",
+        "citation_count": 67,
+        "keywords": ["alzheimer's disease", "brain imaging", "early detection", "neurodegeneration"]
+      },
+      {
+        "title": "Cognitive Reserve and Aging: A Longitudinal Study",
+        "authors": ["Rodriguez, E.", "Taylor, P."],
+        "journal": "Journal of Neuroscience",
+        "year": 2022,
+        "citation_count": 42,
+        "keywords": ["cognitive reserve", "aging", "longitudinal study", "neuroscience"]
+      }
+    ],
+    "orcid_id": "0000-0004-3456-7890",
+    "google_scholar_id": "GHI789JKL012",
+    "institutional_profile_url": "https://neuro.medschool.edu/faculty/rodriguez",
+    "h_index": 35,
+    "total_citations": 1247,
+    "years_active": 15,
+    "profile_id": "faculty_003",
+    "data_sources": ["google_scholar", "orcid", "pubmed", "institutional_website"]
+  },
+  {
+    "name": "Dr. James Liu",
+    "email": "j.liu@researchinst.org",
+    "institution": "National Research Institute",
+    "department": "Computational Biology",
+    "career_stage": "research_scientist",
+    "research_interests": [
+      "genomics",
+      "bioinformatics",
+      "computational biology",
+      "precision medicine"
+    ],
+    "methodologies": [
+      "computational",
+      "theoretical"
+    ],
+    "publications": [
+      {
+        "title": "Machine Learning for Genomic Variant Classification",
+        "authors": ["Liu, J.", "Anderson, K.", "White, S."],
+        "journal": "Nature Genetics",
+        "year": 2023,
+        "doi": "10.1038/s41588-023-01234-5",
+        "citation_count": 28,
+        "keywords": ["genomics", "variant classification", "machine learning", "precision medicine"]
+      },
+      {
+        "title": "Deep Learning Approaches for Gene Expression Analysis",
+        "authors": ["Liu, J.", "Green, R.", "Martinez, C."],
+        "journal": "Bioinformatics",
+        "year": 2022,
+        "citation_count": 35,
+        "keywords": ["gene expression", "deep learning", "bioinformatics", "genomics"]
+      }
+    ],
+    "orcid_id": "0000-0005-4567-8901",
+    "google_scholar_id": "JKL012MNO345",
+    "institutional_profile_url": "https://compbio.researchinst.org/faculty/liu",
+    "h_index": 22,
+    "total_citations": 678,
+    "years_active": 10,
+    "profile_id": "faculty_004",
+    "data_sources": ["google_scholar", "orcid", "pubmed"]
+  },
+  {
+    "name": "Dr. Anna Kowalski",
+    "email": "a.kowalski@gradschool.edu",
+    "institution": "Graduate School University",
+    "department": "Public Health",
+    "career_stage": "postdoc",
+    "research_interests": [
+      "epidemiology",
+      "public health informatics",
+      "health disparities",
+      "social determinants of health"
+    ],
+    "methodologies": [
+      "observational",
+      "survey",
+      "mixed_methods"
+    ],
+    "publications": [
+      {
+        "title": "Social Determinants of COVID-19 Outcomes",
+        "authors": ["Kowalski, A.", "Johnson, M.", "Davis, L."],
+        "journal": "American Journal of Public Health",
+        "year": 2023,
+        "doi": "10.2105/AJPH.2023.307234",
+        "citation_count": 15,
+        "keywords": ["social determinants", "covid-19", "health disparities", "epidemiology"]
+      },
+      {
+        "title": "Health Informatics Applications in Population Health",
+        "authors": ["Kowalski, A.", "Smith, R."],
+        "journal": "Journal of Medical Internet Research",
+        "year": 2022,
+        "citation_count": 12,
+        "keywords": ["health informatics", "population health", "public health", "digital health"]
+      }
+    ],
+    "orcid_id": "0000-0006-5678-9012",
+    "google_scholar_id": "MNO345PQR678",
+    "institutional_profile_url": "https://publichealth.gradschool.edu/fellows/kowalski",
+    "h_index": 8,
+    "total_citations": 127,
+    "years_active": 3,
+    "profile_id": "faculty_005",
+    "data_sources": ["google_scholar", "orcid"]
+  }
+]

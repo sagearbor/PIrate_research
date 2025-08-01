@@ -1,0 +1,93 @@
+# Mock configuration for testing purposes
+
+institution_name: "Test University"
+institution_code: "TESTUNI"
+country: "United States"
+timezone: "America/New_York"
+
+admin_contact: "admin@testuni.edu"
+system_admin: "sysadmin@testuni.edu"
+support_email: "support@testuni.edu"
+
+primary_research_areas:
+  - "computer science"
+  - "engineering"
+  - "life sciences"
+
+excluded_research_areas:
+  - "classified research"
+
+research_keywords:
+  - "artificial intelligence"
+  - "machine learning"
+  - "biotechnology"
+
+funding_sources:
+  nih:
+    name: "National Institutes of Health"
+    base_url: "https://reporter.nih.gov/"
+    enabled: true
+    priority: 1
+    scraping_frequency_hours: 24
+  nsf:
+    name: "National Science Foundation"
+    base_url: "https://www.nsf.gov/funding/"
+    enabled: true
+    priority: 2
+    scraping_frequency_hours: 24
+
+faculty_data_sources:
+  google_scholar:
+    name: "Google Scholar"
+    source_type: "google_scholar"
+    enabled: true
+    update_frequency_hours: 168
+    rate_limit_per_hour: 100
+  institutional:
+    name: "Test University Directory"
+    source_type: "institutional"
+    enabled: true
+    update_frequency_hours: 24
+    rate_limit_per_hour: 1000
+
+notification_preferences:
+  - "email"
+notification_frequency: "daily"
+notification_template_override: null
+
+matching_algorithm: "multi_dimensional_v1"
+minimum_match_score: 0.6
+
+career_stage_weights:
+  graduate_student: 0.8
+  postdoc: 0.9
+  assistant_professor: 1.0
+  associate_professor: 0.8
+  full_professor: 0.6
+  emeritus: 0.3
+
+auto_notification_enabled: true
+batch_processing_enabled: true
+analytics_enabled: true
+external_integrations_enabled: true
+
+data_retention_days: 365
+anonymize_data: false
+gdpr_compliance: false
+
+api_rate_limits:
+  per_minute: 60
+  per_hour: 1000
+  per_day: 10000
+
+webhook_endpoints: {}
+
+custom_fields:
+  institution_type: "test_university"
+  Carnegie_classification: "R1"
+  student_enrollment: 15000
+  faculty_count: 800
+
+config_version: "1.0.0"
+created_date: "2025-01-31T12:00:00"
+last_updated: "2025-01-31T12:00:00"

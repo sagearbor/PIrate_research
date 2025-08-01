@@ -1,0 +1,212 @@
+[
+  {
+    "match_id": "match_001",
+    "faculty_profile_id": "prof_001",
+    "funding_opportunity_id": "nih_r01_001",
+    "match_score": {
+      "total_score": 0.892,
+      "research_alignment": 0.925,
+      "methodology_match": 0.845,
+      "career_stage_fit": 0.900,
+      "deadline_urgency": 0.750,
+      "budget_alignment": 0.890,
+      "scoring_algorithm": "multi_dimensional_v1",
+      "calculated_date": "2025-01-30T14:22:33.000Z"
+    },
+    "faculty_response": "interested",
+    "status": "reviewed",
+    "created_date": "2025-01-30T14:22:33.000Z",
+    "notification_sent": true,
+    "response_time_hours": 18.5,
+    "outcome": "application_submitted"
+  },
+  {
+    "match_id": "match_002",
+    "faculty_profile_id": "prof_002", 
+    "funding_opportunity_id": "nsf_career_001",
+    "match_score": {
+      "total_score": 0.756,
+      "research_alignment": 0.820,
+      "methodology_match": 0.700,
+      "career_stage_fit": 0.950,
+      "deadline_urgency": 0.600,
+      "budget_alignment": 0.710,
+      "scoring_algorithm": "multi_dimensional_v1",
+      "calculated_date": "2025-01-29T09:15:22.000Z"
+    },
+    "faculty_response": "not_interested",
+    "status": "reviewed",
+    "created_date": "2025-01-29T09:15:22.000Z",
+    "notification_sent": true,
+    "response_time_hours": 24.2,
+    "outcome": "declined"
+  },
+  {
+    "match_id": "match_003",
+    "faculty_profile_id": "prof_003",
+    "funding_opportunity_id": "pcori_pilot_001",
+    "match_score": {
+      "total_score": 0.823,
+      "research_alignment": 0.890,
+      "methodology_match": 0.785,
+      "career_stage_fit": 0.800,
+      "deadline_urgency": 0.850,
+      "budget_alignment": 0.790,
+      "scoring_algorithm": "multi_dimensional_v1",
+      "calculated_date": "2025-01-28T16:45:11.000Z"
+    },
+    "faculty_response": null,
+    "status": "pending",
+    "created_date": "2025-01-28T16:45:11.000Z",
+    "notification_sent": true,
+    "response_time_hours": null,
+    "outcome": null
+  },
+  {
+    "match_id": "match_004",
+    "faculty_profile_id": "prof_004",
+    "funding_opportunity_id": "doe_early_career_001",
+    "match_score": {
+      "total_score": 0.634,
+      "research_alignment": 0.650,
+      "methodology_match": 0.680,
+      "career_stage_fit": 0.850,
+      "deadline_urgency": 0.400,
+      "budget_alignment": 0.590,
+      "scoring_algorithm": "multi_dimensional_v1",
+      "calculated_date": "2025-01-27T11:30:45.000Z"
+    },
+    "faculty_response": "interested",
+    "status": "reviewed",
+    "created_date": "2025-01-27T11:30:45.000Z",
+    "notification_sent": true,
+    "response_time_hours": 36.8,
+    "outcome": "under_consideration"
+  },
+  {
+    "match_id": "match_005",
+    "faculty_profile_id": "prof_005",
+    "funding_opportunity_id": "nih_k99_001",
+    "match_score": {
+      "total_score": 0.912,
+      "research_alignment": 0.940,
+      "methodology_match": 0.890,
+      "career_stage_fit": 0.980,
+      "deadline_urgency": 0.800,
+      "budget_alignment": 0.850,
+      "scoring_algorithm": "multi_dimensional_v1",
+      "calculated_date": "2025-01-26T13:20:15.000Z"
+    },
+    "faculty_response": "very_interested",
+    "status": "accepted",
+    "created_date": "2025-01-26T13:20:15.000Z",
+    "notification_sent": true,
+    "response_time_hours": 12.3,
+    "outcome": "application_submitted"
+  },
+  {
+    "match_id": "match_006",
+    "faculty_profile_id": "prof_006",
+    "funding_opportunity_id": "nsf_ccf_001",
+    "match_score": {
+      "total_score": 0.701,
+      "research_alignment": 0.750,
+      "methodology_match": 0.720,
+      "career_stage_fit": 0.650,
+      "deadline_urgency": 0.700,
+      "budget_alignment": 0.685,
+      "scoring_algorithm": "multi_dimensional_v1",
+      "calculated_date": "2025-01-25T08:42:33.000Z"
+    },
+    "faculty_response": null,
+    "status": "pending",
+    "created_date": "2025-01-25T08:42:33.000Z",
+    "notification_sent": true,
+    "response_time_hours": null,
+    "outcome": null
+  },
+  {
+    "match_id": "match_007",
+    "faculty_profile_id": "prof_007",
+    "funding_opportunity_id": "gates_foundation_001",
+    "match_score": {
+      "total_score": 0.789,
+      "research_alignment": 0.825,
+      "methodology_match": 0.760,
+      "career_stage_fit": 0.750,
+      "deadline_urgency": 0.850,
+      "budget_alignment": 0.760,
+      "scoring_algorithm": "multi_dimensional_v1",
+      "calculated_date": "2025-01-24T15:18:27.000Z"
+    },
+    "faculty_response": "interested",
+    "status": "reviewed",
+    "created_date": "2025-01-24T15:18:27.000Z",
+    "notification_sent": true,
+    "response_time_hours": 28.7,
+    "outcome": "preliminary_discussion"
+  },
+  {
+    "match_id": "match_008",
+    "faculty_profile_id": "prof_008",
+    "funding_opportunity_id": "nih_r21_001",
+    "match_score": {
+      "total_score": 0.567,
+      "research_alignment": 0.580,
+      "methodology_match": 0.520,
+      "career_stage_fit": 0.700,
+      "deadline_urgency": 0.450,
+      "budget_alignment": 0.585,
+      "scoring_algorithm": "multi_dimensional_v1",
+      "calculated_date": "2025-01-23T10:55:41.000Z"
+    },
+    "faculty_response": "not_interested",
+    "status": "rejected",
+    "created_date": "2025-01-23T10:55:41.000Z",
+    "notification_sent": true,
+    "response_time_hours": 48.1,
+    "outcome": "declined"
+  },
+  {
+    "match_id": "match_009",
+    "faculty_profile_id": "prof_009",
+    "funding_opportunity_id": "wellcome_trust_001",
+    "match_score": {
+      "total_score": 0.845,
+      "research_alignment": 0.880,
+      "methodology_match": 0.810,
+      "career_stage_fit": 0.820,
+      "deadline_urgency": 0.750,
+      "budget_alignment": 0.865,
+      "scoring_algorithm": "multi_dimensional_v1",
+      "calculated_date": "2025-01-22T12:33:18.000Z"
+    },
+    "faculty_response": "very_interested",
+    "status": "accepted",
+    "created_date": "2025-01-22T12:33:18.000Z",
+    "notification_sent": true,
+    "response_time_hours": 15.2,
+    "outcome": "application_submitted"
+  },
+  {
+    "match_id": "match_010",
+    "faculty_profile_id": "prof_010",
+    "funding_opportunity_id": "nserc_discovery_001",
+    "match_score": {
+      "total_score": 0.723,
+      "research_alignment": 0.740,
+      "methodology_match": 0.695,
+      "career_stage_fit": 0.800,
+      "deadline_urgency": 0.600,
+      "budget_alignment": 0.780,
+      "scoring_algorithm": "multi_dimensional_v1",
+      "calculated_date": "2025-01-21T14:12:05.000Z"
+    },
+    "faculty_response": null,
+    "status": "pending",
+    "created_date": "2025-01-21T14:12:05.000Z",
+    "notification_sent": false,
+    "response_time_hours": null,
+    "outcome": null
+  }
+]

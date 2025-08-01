@@ -1,0 +1,171 @@
+# Default Configuration Template for Faculty Research Opportunity Notifier
+# This serves as the base template for all institutional configurations
+
+institution_name: "Default University Template"
+institution_code: "DEFAULT"
+country: "United States"
+timezone: "UTC"
+
+# Administrative Contacts
+admin_contact: "admin@university.edu"
+system_admin: "sysadmin@university.edu"
+support_email: "support@university.edu"
+
+# Research Areas and Priorities
+primary_research_areas:
+  - "computer science"
+  - "engineering"
+  - "life sciences"
+  - "social sciences"
+  - "physical sciences"
+
+excluded_research_areas:
+  - "classified research"
+  - "proprietary industry research"
+
+research_keywords:
+  - "artificial intelligence"
+  - "machine learning"
+  - "data science"
+  - "biotechnology"
+  - "renewable energy"
+  - "climate change"
+  - "healthcare"
+  - "education"
+
+# Funding Source Configuration
+funding_sources:
+  nih:
+    name: "National Institutes of Health"
+    base_url: "https://reporter.nih.gov/"
+    enabled: true
+    priority: 1
+    scraping_frequency_hours: 24
+    custom_parameters:
+      include_clinical_trials: true
+      min_award_amount: 50000
+    eligibility_keywords:
+      - "health"
+      - "biomedical"
+      - "clinical"
+      - "medical"
+    exclude_keywords:
+      - "industry-sponsored"
+
+  nsf:
+    name: "National Science Foundation"
+    base_url: "https://www.nsf.gov/funding/"
+    enabled: true
+    priority: 2
+    scraping_frequency_hours: 24
+    custom_parameters:
+      include_educational: true
+      international_collaborations: true
+    eligibility_keywords:
+      - "science"
+      - "engineering"
+      - "mathematics"
+      - "education"
+
+  doe:
+    name: "Department of Energy"
+    base_url: "https://www.energy.gov/science/funding-opportunities"
+    enabled: true
+    priority: 3
+    scraping_frequency_hours: 48
+    custom_parameters:
+      focus_areas:
+        - "renewable energy"
+        - "nuclear energy"
+        - "energy efficiency"
+    eligibility_keywords:
+      - "energy"
+      - "climate"
+      - "environmental"
+
+# Faculty Data Sources
+faculty_data_sources:
+  google_scholar:
+    name: "Google Scholar"
+    source_type: "google_scholar"
+    enabled: true
+    update_frequency_hours: 168  # Weekly
+    api_key_required: false
+    rate_limit_per_hour: 100
+    custom_parameters:
+      search_depth: "comprehensive"
+      include_citations: true
+
+  orcid:
+    name: "ORCID"
+    source_type: "orcid"
+    base_url: "https://pub.orcid.org/"
+    enabled: true
+    update_frequency_hours: 168
+    api_key_required: false
+    rate_limit_per_hour: 50
+    custom_parameters:
+      include_affiliations: true
+      include_works: true
+
+  institutional:
+    name: "Institutional Directory"
+    source_type: "institutional"
+    enabled: true
+    update_frequency_hours: 24
+    api_key_required: false
+    rate_limit_per_hour: 1000
+    custom_parameters:
+      directory_url: "https://directory.university.edu/faculty"
+      include_emeritus: false
+
+# Notification Settings
+notification_preferences:
+  - "email"
+
+notification_frequency: "daily"  # immediate, daily, weekly
+notification_template_override: null
+
+# Matching and Scoring Configuration
+matching_algorithm: "multi_dimensional_v1"
+minimum_match_score: 0.6
+
+career_stage_weights:
+  graduate_student: 0.8
+  postdoc: 0.9
+  assistant_professor: 1.0
+  associate_professor: 0.8
+  full_professor: 0.6
+  emeritus: 0.3
+  research_scientist: 0.9
+
+# System Behavior Configuration
+auto_notification_enabled: true
+batch_processing_enabled: true
+analytics_enabled: true
+external_integrations_enabled: true
+
+# Data Retention and Privacy
+data_retention_days: 365
+anonymize_data: false
+gdpr_compliance: false
+
+# API and Integration Settings
+api_rate_limits:
+  per_minute: 60
+  per_hour: 1000
+  per_day: 10000
+
+webhook_endpoints: {}
+
+# Custom Fields and Extensions
+custom_fields:
+  institution_type: "public_research_university"
+  Carnegie_classification: "R1"
+  student_enrollment: 25000
+  faculty_count: 1500
+
+# Configuration Metadata
+config_version: "1.0.0"
+created_date: "2025-01-31T15:00:00"
+last_updated: "2025-01-31T15:00:00"

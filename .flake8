@@ -1,0 +1,31 @@
+[flake8]
+max-line-length = 88
+extend-ignore = 
+    E203,  # whitespace before ':'
+    W503,  # line break before binary operator
+    E501,  # line too long (handled by black)
+    F401,  # imported but unused (handled by isort)
+exclude = 
+    .git,
+    __pycache__,
+    .pytest_cache,
+    .mypy_cache,
+    htmlcov,
+    build,
+    dist,
+    *.egg-info,
+    venv,
+    .venv,
+    env,
+    .env
+max-complexity = 10
+import-order-style = google
+docstring-convention = google
+per-file-ignores =
+    # Tests can use assert statements
+    tests/*:S101
+    # __init__.py files can have unused imports
+    __init__.py:F401
+    # Allow longer lines in configuration files
+    setup.py:E501
+    conftest.py:E501

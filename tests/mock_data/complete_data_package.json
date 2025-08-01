@@ -1,0 +1,851 @@
+{
+  "description": "Complete data package for Notification Agent testing - contains all outputs from Phase 3 agents",
+  "metadata": {
+    "created_date": "2024-01-15T10:30:00Z",
+    "agent_versions": {
+      "matcher_agent": "1.0.0",
+      "idea_agent": "1.0.0", 
+      "collaborator_agent": "1.0.0"
+    },
+    "test_scenario": "comprehensive_notification_generation"
+  },
+  "matches": [
+    {
+      "match_id": "match_faculty_001_NIH_2024_AI_001",
+      "faculty_profile_id": "faculty_001",
+      "funding_opportunity_id": "NIH-2024-AI-HEALTHCARE-001",
+      "match_score": {
+        "total_score": 0.89,
+        "research_alignment": 0.92,
+        "methodology_match": 0.85,
+        "career_stage_fit": 0.95,
+        "deadline_urgency": 0.70,
+        "budget_alignment": 0.88,
+        "scoring_algorithm": "multi_dimensional_v1.0",
+        "calculated_date": "2024-01-15T09:15:00Z"
+      },
+      "status": "pending",
+      "notification_sent": false,
+      "faculty_response": null,
+      "created_date": "2024-01-15T09:15:00Z",
+      "last_updated": "2024-01-15T09:15:00Z"
+    },
+    {
+      "match_id": "match_faculty_002_NSF_2024_CS_002",
+      "faculty_profile_id": "faculty_002", 
+      "funding_opportunity_id": "NSF-2024-CS-FOUNDATIONS-002",
+      "match_score": {
+        "total_score": 0.76,
+        "research_alignment": 0.80,
+        "methodology_match": 0.75,
+        "career_stage_fit": 0.85,
+        "deadline_urgency": 0.60,
+        "budget_alignment": 0.70,
+        "scoring_algorithm": "multi_dimensional_v1.0",
+        "calculated_date": "2024-01-15T09:16:00Z"
+      },
+      "status": "pending",
+      "notification_sent": false,
+      "faculty_response": null,
+      "created_date": "2024-01-15T09:16:00Z",
+      "last_updated": "2024-01-15T09:16:00Z"
+    },
+    {
+      "match_id": "match_faculty_003_DOE_2024_ENERGY_003",
+      "faculty_profile_id": "faculty_003",
+      "funding_opportunity_id": "DOE-2024-RENEWABLE-ENERGY-003", 
+      "match_score": {
+        "total_score": 0.82,
+        "research_alignment": 0.87,
+        "methodology_match": 0.78,
+        "career_stage_fit": 0.80,
+        "deadline_urgency": 0.90,
+        "budget_alignment": 0.85,
+        "scoring_algorithm": "multi_dimensional_v1.0",
+        "calculated_date": "2024-01-15T09:17:00Z"
+      },
+      "status": "pending",
+      "notification_sent": false,
+      "faculty_response": null,
+      "created_date": "2024-01-15T09:17:00Z",
+      "last_updated": "2024-01-15T09:17:00Z"
+    }
+  ],
+  "research_ideas": {
+    "match_faculty_001_NIH_2024_AI_001": [
+      {
+        "title": "Incremental AI Healthcare Diagnostics Enhancement",
+        "variant_type": "conservative",
+        "research_question": "How can we improve existing clinical decision support systems using well-established machine learning techniques?",
+        "hypothesis": "Integration of proven ML algorithms into current electronic health records will incrementally improve diagnostic accuracy with minimal workflow disruption.",
+        "methodology": ["computational", "experimental"],
+        "objectives": [
+          "Implement and validate proven ML algorithms in clinical settings",
+          "Conduct retrospective analysis on existing patient datasets",
+          "Develop integration protocols for current EHR systems",
+          "Measure diagnostic accuracy improvements in controlled trials"
+        ],
+        "timeline_months": 24,
+        "milestones": [
+          "Month 6: Complete EHR system integration",
+          "Month 12: Retrospective data analysis complete",
+          "Month 18: Clinical validation trials begun",
+          "Month 24: Final results and integration recommendations"
+        ],
+        "deliverables": [
+          "Integrated ML diagnostic module",
+          "Clinical validation report",
+          "EHR integration guidelines",
+          "Peer-reviewed publications on diagnostic improvements"
+        ],
+        "estimated_budget": "180000",
+        "budget_breakdown": {
+          "personnel": "120000",
+          "equipment": "25000", 
+          "supplies": "15000",
+          "travel": "8000",
+          "other": "12000"
+        },
+        "innovation_level": 0.3,
+        "feasibility_score": 0.9,
+        "impact_potential": 0.7,
+        "key_references": [
+          "Rajkomar et al. Machine Learning in Medicine. NEJM 2019",
+          "Topol. High-performance medicine: the convergence of human and artificial intelligence. Nature Medicine 2019"
+        ],
+        "literature_gap": "Limited integration studies of ML algorithms in real-world clinical workflows",
+        "generated_date": "2024-01-15T09:45:00Z",
+        "llm_model": null
+      },
+      {
+        "title": "Multimodal AI for Personalized Healthcare Insights",
+        "variant_type": "innovative",
+        "research_question": "Can multimodal AI systems combining clinical, genomic, and lifestyle data enable breakthrough personalized healthcare predictions?",
+        "hypothesis": "Novel multimodal fusion architectures will unlock previously undetectable patterns in patient data, enabling precise personalized treatment recommendations.",
+        "methodology": ["computational", "experimental", "clinical"],
+        "objectives": [
+          "Develop novel multimodal fusion architectures for healthcare data",
+          "Create comprehensive patient data integration pipelines",
+          "Validate personalized prediction models in clinical settings",
+          "Establish privacy-preserving data sharing protocols"
+        ],
+        "timeline_months": 30,
+        "milestones": [
+          "Month 6: Multimodal architecture design complete",
+          "Month 12: Data integration pipeline operational",
+          "Month 18: Initial model validation complete",
+          "Month 24: Clinical trial enrollment begun",
+          "Month 30: Final model deployment and evaluation"
+        ],
+        "deliverables": [
+          "Novel multimodal AI architecture",
+          "Personalized healthcare prediction platform",
+          "Clinical validation studies",
+          "Privacy-preserving data protocols",
+          "Patent applications for novel approaches"
+        ],
+        "estimated_budget": "225000",
+        "budget_breakdown": {
+          "personnel": "150000",
+          "equipment": "35000",
+          "supplies": "20000", 
+          "travel": "12000",
+          "other": "8000"
+        },
+        "innovation_level": 0.8,
+        "feasibility_score": 0.7,
+        "impact_potential": 0.9,
+        "key_references": [
+          "Chen et al. Multimodal learning for healthcare applications. Nature Machine Intelligence 2023",
+          "Wang et al. Deep learning for multimodal data fusion in precision medicine. Nature Reviews Drug Discovery 2023"
+        ],
+        "literature_gap": "Limited work on comprehensive multimodal fusion for personalized healthcare across multiple data types",
+        "generated_date": "2024-01-15T09:46:00Z",
+        "llm_model": null
+      },
+      {
+        "title": "Autonomous General AI for Comprehensive Healthcare Reasoning",
+        "variant_type": "stretch",
+        "research_question": "How can we develop artificial general intelligence systems capable of human-level medical reasoning across all healthcare domains?",
+        "hypothesis": "Advanced neural architectures incorporating causal reasoning, common sense knowledge, and continuous learning will achieve human-level performance in comprehensive medical decision-making.",
+        "methodology": ["computational", "theoretical", "experimental"],
+        "objectives": [
+          "Research and develop novel AGI architectures for medical reasoning",
+          "Create comprehensive medical knowledge representations",
+          "Develop continuous learning and adaptation mechanisms",
+          "Validate AGI performance against human medical experts",
+          "Address ethical and safety considerations for medical AGI"
+        ],
+        "timeline_months": 36,
+        "milestones": [
+          "Month 6: AGI architecture research and design",
+          "Month 12: Medical knowledge representation complete",
+          "Month 18: Initial AGI prototype development",
+          "Month 24: Comprehensive testing against medical benchmarks",
+          "Month 30: Human expert comparison studies",
+          "Month 36: Ethics review and deployment recommendations"
+        ],
+        "deliverables": [
+          "Novel AGI architecture for medical reasoning",
+          "Comprehensive medical knowledge base",
+          "Autonomous diagnostic and treatment recommendation system",
+          "Human-AGI performance comparison studies",
+          "Ethics and safety guidelines for medical AGI"
+        ],
+        "estimated_budget": "250000",
+        "budget_breakdown": {
+          "personnel": "175000",
+          "equipment": "40000",
+          "supplies": "15000",
+          "travel": "15000",
+          "other": "5000"
+        },
+        "innovation_level": 0.95,
+        "feasibility_score": 0.4,
+        "impact_potential": 1.0,
+        "key_references": [
+          "Silver et al. Reward is enough. Artificial Intelligence 2021",
+          "Brown et al. Language Models are Few-Shot Learners. NeurIPS 2020",
+          "Goertzel. Artificial General Intelligence: Concept, State of the Art, and Future Prospects. Journal of Artificial General Intelligence 2020"
+        ],
+        "literature_gap": "No existing AGI systems demonstrate comprehensive medical reasoning capabilities across all healthcare domains",
+        "generated_date": "2024-01-15T09:47:00Z", 
+        "llm_model": null
+      }
+    ],
+    "match_faculty_002_NSF_2024_CS_002": [
+      {
+        "title": "Enhanced Algorithmic Efficiency in Distributed Systems",
+        "variant_type": "conservative",
+        "research_question": "How can we improve the efficiency of existing distributed algorithms using established optimization techniques?",
+        "hypothesis": "Systematic application of known optimization strategies will yield measurable improvements in distributed system performance.",
+        "methodology": ["computational", "theoretical"],
+        "objectives": [
+          "Analyze current distributed algorithm performance bottlenecks",
+          "Apply established optimization techniques to key algorithms",
+          "Validate improvements through comprehensive benchmarking",
+          "Develop optimization guidelines for distributed systems"
+        ],
+        "timeline_months": 20,
+        "milestones": [
+          "Month 5: Performance analysis complete",
+          "Month 10: Optimization implementations ready",
+          "Month 15: Benchmarking phase complete", 
+          "Month 20: Guidelines and results published"
+        ],
+        "deliverables": [
+          "Optimized distributed algorithms",
+          "Performance benchmarking suite",
+          "Optimization guidelines documentation",
+          "Conference publications on improvements"
+        ],
+        "estimated_budget": "120000",
+        "budget_breakdown": {
+          "personnel": "80000",
+          "equipment": "20000",
+          "supplies": "10000",
+          "travel": "7000",
+          "other": "3000"
+        },
+        "innovation_level": 0.4,
+        "feasibility_score": 0.85,
+        "impact_potential": 0.6,
+        "key_references": [
+          "Lynch. Distributed Algorithms. Morgan Kaufmann 1996",
+          "Tel. Introduction to Distributed Algorithms. Cambridge University Press 2000"
+        ],
+        "literature_gap": "Systematic optimization studies for modern distributed algorithms are limited",
+        "generated_date": "2024-01-15T09:48:00Z",
+        "llm_model": null
+      },
+      {
+        "title": "Novel Consensus Mechanisms for Byzantine Fault Tolerance",
+        "variant_type": "innovative",
+        "research_question": "Can we develop fundamentally new consensus mechanisms that provide superior Byzantine fault tolerance with improved efficiency?",
+        "hypothesis": "Novel cryptographic primitives combined with game-theoretic analysis will enable breakthrough consensus protocols with optimal fault tolerance and efficiency.",
+        "methodology": ["theoretical", "computational"],
+        "objectives": [
+          "Research novel cryptographic approaches to consensus",
+          "Develop game-theoretic models for Byzantine behavior",
+          "Design and implement new consensus protocols",
+          "Prove theoretical guarantees and validate empirically"
+        ],
+        "timeline_months": 24,
+        "milestones": [
+          "Month 6: Cryptographic primitives research complete",
+          "Month 12: Game-theoretic models developed",
+          "Month 18: Protocol design and implementation",
+          "Month 24: Theoretical proofs and empirical validation"
+        ],
+        "deliverables": [
+          "Novel consensus protocol specifications",
+          "Theoretical analysis and proofs",
+          "Prototype implementation and testing framework",
+          "High-impact conference and journal publications"
+        ],
+        "estimated_budget": "160000",
+        "budget_breakdown": {
+          "personnel": "110000",
+          "equipment": "25000",
+          "supplies": "10000",
+          "travel": "10000",
+          "other": "5000"
+        },
+        "innovation_level": 0.75,
+        "feasibility_score": 0.65,
+        "impact_potential": 0.85,
+        "key_references": [
+          "Castro & Liskov. Practical Byzantine Fault Tolerance. OSDI 1999",
+          "Miller et al. The Honey Badger of BFT Protocols. CCS 2016"
+        ],
+        "literature_gap": "Limited exploration of novel cryptographic primitives for improved Byzantine consensus",
+        "generated_date": "2024-01-15T09:49:00Z",
+        "llm_model": null
+      },
+      {
+        "title": "Quantum-Classical Hybrid Distributed Computing Paradigm",
+        "variant_type": "stretch",
+        "research_question": "How can we architect distributed systems that seamlessly integrate quantum and classical computing resources for unprecedented computational capabilities?",
+        "hypothesis": "Hybrid quantum-classical distributed architectures will unlock exponential computational advantages for specific problem classes while maintaining practical applicability.",
+        "methodology": ["theoretical", "computational", "experimental"],
+        "objectives": [
+          "Develop theoretical foundations for quantum-classical hybrid distribution",
+          "Design novel architectures for hybrid resource management",
+          "Implement prototype hybrid distributed systems",
+          "Identify and validate quantum advantage applications",
+          "Create programming models for hybrid distributed computing"
+        ],
+        "timeline_months": 30,
+        "milestones": [
+          "Month 6: Theoretical framework established", 
+          "Month 12: Architecture design complete",
+          "Month 18: Prototype system operational",
+          "Month 24: Quantum advantage validation",
+          "Month 30: Programming model and deployment guidelines"
+        ],
+        "deliverables": [
+          "Hybrid quantum-classical distributed architecture",
+          "Prototype implementation and testing framework",
+          "Quantum advantage validation studies",
+          "Programming models and development tools",
+          "Breakthrough publications in top-tier venues"
+        ],
+        "estimated_budget": "200000",
+        "budget_breakdown": {
+          "personnel": "130000",
+          "equipment": "45000",
+          "supplies": "10000",
+          "travel": "12000", 
+          "other": "3000"
+        },
+        "innovation_level": 0.9,
+        "feasibility_score": 0.3,
+        "impact_potential": 0.95,
+        "key_references": [
+          "Preskill. Quantum Computing in the NISQ era and beyond. Quantum 2018",
+          "Biamonte et al. Quantum machine learning. Nature 2017"
+        ],
+        "literature_gap": "No existing frameworks for seamless quantum-classical hybrid distributed computing",
+        "generated_date": "2024-01-15T09:50:00Z",
+        "llm_model": null
+      }
+    ],
+    "match_faculty_003_DOE_2024_ENERGY_003": [
+      {
+        "title": "Optimized Solar Panel Efficiency Using Established Materials",
+        "variant_type": "conservative",
+        "research_question": "How can we incrementally improve solar panel efficiency using well-characterized materials and proven manufacturing techniques?",
+        "hypothesis": "Systematic optimization of existing silicon-based photovoltaic designs will achieve measurable efficiency improvements within current manufacturing constraints.",
+        "methodology": ["experimental", "computational"],
+        "objectives": [
+          "Optimize silicon crystal structure and doping profiles",
+          "Improve anti-reflective coating formulations",
+          "Enhance electrical contact designs for reduced losses",
+          "Validate improvements through standardized testing protocols"
+        ],
+        "timeline_months": 18,
+        "milestones": [
+          "Month 4: Material optimization studies complete",
+          "Month 8: Prototype panels manufactured",
+          "Month 12: Efficiency testing and validation",
+          "Month 18: Manufacturing integration and cost analysis"
+        ],
+        "deliverables": [
+          "Optimized solar panel designs",
+          "Manufacturing process improvements",
+          "Efficiency validation reports",
+          "Cost-benefit analysis for commercial deployment"
+        ],
+        "estimated_budget": "140000",
+        "budget_breakdown": {
+          "personnel": "85000",
+          "equipment": "30000",
+          "supplies": "15000",
+          "travel": "6000",
+          "other": "4000"
+        },
+        "innovation_level": 0.35,
+        "feasibility_score": 0.9,
+        "impact_potential": 0.6,
+        "key_references": [
+          "Green et al. Solar cell efficiency tables. Progress in Photovoltaics 2023",
+          "Battaglia et al. High-efficiency crystalline silicon solar cells. Nature Energy 2016"
+        ],
+        "literature_gap": "Limited systematic optimization studies for manufacturing-ready efficiency improvements",
+        "generated_date": "2024-01-15T09:51:00Z",
+        "llm_model": null
+      },
+      {
+        "title": "Perovskite-Silicon Tandem Solar Cells for Next-Generation Photovoltaics",
+        "variant_type": "innovative", 
+        "research_question": "Can we develop commercially viable perovskite-silicon tandem solar cells that achieve breakthrough efficiency levels?",
+        "hypothesis": "Novel perovskite formulations combined with optimized silicon substrates will enable tandem architectures exceeding 30% efficiency while maintaining long-term stability.",
+        "methodology": ["experimental", "computational", "materials"],
+        "objectives": [
+          "Develop stable perovskite materials for tandem applications",
+          "Optimize interface engineering between perovskite and silicon layers",
+          "Achieve tandem cell efficiencies exceeding 30%",
+          "Demonstrate long-term stability under operational conditions",
+          "Develop scalable manufacturing processes"
+        ],
+        "timeline_months": 24,
+        "milestones": [
+          "Month 6: Perovskite material optimization complete",
+          "Month 12: Interface engineering protocols established",
+          "Month 18: 30% efficiency milestone achieved",
+          "Month 24: Stability testing and manufacturing scalability"
+        ],
+        "deliverables": [
+          "High-efficiency perovskite-silicon tandem cells",
+          "Stability testing protocols and results",
+          "Scalable manufacturing process development",
+          "Intellectual property filings and publications"
+        ],
+        "estimated_budget": "190000",
+        "budget_breakdown": {
+          "personnel": "120000",
+          "equipment": "40000",
+          "supplies": "20000",
+          "travel": "7000",
+          "other": "3000"
+        },
+        "innovation_level": 0.8,
+        "feasibility_score": 0.6,
+        "impact_potential": 0.9,
+        "key_references": [
+          "Kim et al. High-efficiency perovskite solar cells. Chemical Reviews 2020",
+          "Al-Ashouri et al. Monolithic perovskite/silicon tandem solar cell. Science 2020"
+        ],
+        "literature_gap": "Limited work on commercially scalable perovskite-silicon tandem architectures with proven stability",
+        "generated_date": "2024-01-15T09:52:00Z",
+        "llm_model": null
+      },
+      {
+        "title": "Revolutionary Quantum Dot Solar Harvesting with Thermodynamic Limit Breaking",
+        "variant_type": "stretch",
+        "research_question": "Can quantum dot architectures fundamentally transcend the Shockley-Queisser limit to achieve unprecedented solar energy conversion efficiencies?",
+        "hypothesis": "Multi-exciton generation in engineered quantum dot arrays will enable hot carrier extraction and intermediate band formation, potentially achieving efficiencies exceeding 60%.",
+        "methodology": ["experimental", "theoretical", "computational"],
+        "objectives": [
+          "Design quantum dot architectures for multi-exciton generation",
+          "Develop hot carrier extraction mechanisms",
+          "Create intermediate band gap engineering strategies",
+          "Demonstrate proof-of-concept devices exceeding thermodynamic limits",
+          "Address fundamental physics and practical implementation challenges"
+        ],
+        "timeline_months": 36,
+        "milestones": [
+          "Month 6: Quantum dot synthesis and characterization",
+          "Month 12: Multi-exciton generation validation",
+          "Month 18: Hot carrier extraction prototype",
+          "Month 24: Intermediate band device demonstration",
+          "Month 30: Integrated system testing and optimization",
+          "Month 36: Thermodynamic limit transcendence validation"
+        ],
+        "deliverables": [
+          "Novel quantum dot solar cell architectures",
+          "Multi-exciton generation demonstration",
+          "Hot carrier extraction systems",
+          "Devices exceeding Shockley-Queisser limit",
+          "Fundamental physics insights and breakthrough publications"
+        ],
+        "estimated_budget": "250000",
+        "budget_breakdown": {
+          "personnel": "160000",
+          "equipment": "55000",
+          "supplies": "20000",
+          "travel": "10000",
+          "other": "5000"
+        },
+        "innovation_level": 0.95,
+        "feasibility_score": 0.25,
+        "impact_potential": 1.0,
+        "key_references": [
+          "Nozik. Quantum dot solar cells. Physica E 2002",
+          "Hanna & Nozik. Solar conversion efficiency of photovoltaic and photoelectrolysis cells. Journal of Applied Physics 2006"
+        ],
+        "literature_gap": "No demonstrated systems have successfully transcended fundamental thermodynamic limits for solar energy conversion",
+        "generated_date": "2024-01-15T09:53:00Z",
+        "llm_model": null
+      }
+    ]
+  },
+  "collaborator_suggestions": {
+    "faculty_001": [
+      {
+        "faculty_profile_id": "faculty_004",
+        "name": "Dr. Michael Chen",
+        "institution": "Stanford Medical Center",
+        "relevance_score": 0.94,
+        "complementary_expertise": [
+          "clinical trials design",
+          "medical imaging analysis", 
+          "biostatistics",
+          "electronic health records",
+          "FDA regulatory compliance"
+        ],
+        "shared_interests": [
+          "artificial intelligence",
+          "healthcare applications",
+          "machine learning",
+          "clinical decision support"
+        ],
+        "previous_collaborations": 3,
+        "common_publications": [
+          "Machine Learning in Clinical Decision Support: A Systematic Review",
+          "AI-Driven Diagnostic Imaging: Current State and Future Directions"
+        ],
+        "email": "mchen@stanford.edu",
+        "profile_url": "https://med.stanford.edu/profiles/michael-chen"
+      },
+      {
+        "faculty_profile_id": "faculty_005",
+        "name": "Dr. Sarah Rodriguez",
+        "institution": "Mayo Clinic Research",
+        "relevance_score": 0.87,
+        "complementary_expertise": [
+          "personalized medicine",
+          "genomics data analysis",
+          "clinical informatics",
+          "patient privacy protection",
+          "multi-omics integration"
+        ],
+        "shared_interests": [
+          "precision healthcare",
+          "AI in medicine",
+          "data integration",
+          "personalized treatment"
+        ],
+        "previous_collaborations": 1,
+        "common_publications": [
+          "Genomic Data Integration for Personalized Healthcare AI"
+        ],
+        "email": "rodriguez.sarah@mayo.edu",
+        "profile_url": "https://www.mayo.edu/research/faculty/rodriguez-sarah"
+      },
+      {
+        "faculty_profile_id": "faculty_006",
+        "name": "Dr. James Thompson",
+        "institution": "MIT Computer Science and Artificial Intelligence Laboratory",
+        "relevance_score": 0.82,
+        "complementary_expertise": [
+          "neural network architectures",
+          "computer vision",
+          "natural language processing",
+          "reinforcement learning",
+          "AI safety and ethics"
+        ],
+        "shared_interests": [
+          "artificial intelligence",
+          "machine learning",
+          "deep learning",
+          "AI applications"
+        ],
+        "previous_collaborations": 0,
+        "common_publications": [],
+        "email": "jthompson@csail.mit.edu",
+        "profile_url": "https://www.csail.mit.edu/person/james-thompson"
+      }
+    ],
+    "faculty_002": [
+      {
+        "faculty_profile_id": "faculty_007",
+        "name": "Dr. Elena Petrov",
+        "institution": "Carnegie Mellon University",
+        "relevance_score": 0.91,
+        "complementary_expertise": [
+          "cryptography",
+          "security protocols",
+          "formal verification",
+          "blockchain technology",
+          "distributed systems security"
+        ],
+        "shared_interests": [
+          "distributed systems",
+          "consensus algorithms",
+          "fault tolerance",
+          "system reliability"
+        ],
+        "previous_collaborations": 2,
+        "common_publications": [
+          "Formal Verification of Distributed Consensus Protocols",
+          "Security Analysis of Byzantine Fault Tolerant Systems"
+        ],
+        "email": "epetrov@cmu.edu",
+        "profile_url": "https://www.cs.cmu.edu/~epetrov"
+      },
+      {
+        "faculty_profile_id": "faculty_008",
+        "name": "Dr. Robert Kim",
+        "institution": "University of California, Berkeley",
+        "relevance_score": 0.85,
+        "complementary_expertise": [
+          "quantum computing",
+          "quantum algorithms",
+          "quantum error correction",
+          "quantum networking",
+          "hybrid quantum systems"
+        ],
+        "shared_interests": [
+          "distributed computing",
+          "algorithm design",
+          "theoretical computer science",
+          "system architecture"
+        ],
+        "previous_collaborations": 0,
+        "common_publications": [],
+        "email": "rkim@berkeley.edu",
+        "profile_url": "https://eecs.berkeley.edu/faculty/robert-kim"
+      },
+      {
+        "faculty_profile_id": "faculty_009",
+        "name": "Dr. Lisa Wang",
+        "institution": "Google Research",
+        "relevance_score": 0.79,
+        "complementary_expertise": [
+          "large-scale systems",
+          "performance optimization",
+          "cloud computing",
+          "system reliability",
+          "infrastructure scaling"
+        ],
+        "shared_interests": [
+          "distributed systems",
+          "algorithm efficiency",
+          "system performance",
+          "scalability"
+        ],
+        "previous_collaborations": 1,
+        "common_publications": [
+          "Scalable Distributed Algorithms for Large-Scale Systems"
+        ],
+        "email": "lisawang@google.com",
+        "profile_url": "https://research.google/people/lisa-wang"
+      }
+    ],
+    "faculty_003": [
+      {
+        "faculty_profile_id": "faculty_010",
+        "name": "Dr. Andreas Mueller",
+        "institution": "National Renewable Energy Laboratory",
+        "relevance_score": 0.93,
+        "complementary_expertise": [
+          "perovskite solar cells",
+          "materials characterization",
+          "photovoltaic device physics",
+          "stability testing protocols",
+          "manufacturing scale-up"
+        ],
+        "shared_interests": [
+          "renewable energy",
+          "solar cell technology",
+          "materials science",
+          "energy conversion"
+        ],
+        "previous_collaborations": 4,
+        "common_publications": [
+          "Perovskite Solar Cell Stability: Challenges and Solutions",
+          "Advanced Materials for Next-Generation Photovoltaics",
+          "Manufacturing Considerations for Perovskite-Silicon Tandems"
+        ],
+        "email": "andreas.mueller@nrel.gov",
+        "profile_url": "https://www.nrel.gov/research/staff/andreas-mueller"
+      },
+      {
+        "faculty_profile_id": "faculty_011",
+        "name": "Dr. Yuki Tanaka",
+        "institution": "University of Tokyo",
+        "relevance_score": 0.88,
+        "complementary_expertise": [
+          "quantum dot synthesis",
+          "nanostructure fabrication",
+          "optical spectroscopy",
+          "semiconductor physics",
+          "hot carrier dynamics"
+        ],
+        "shared_interests": [
+          "photovoltaics",
+          "quantum effects",
+          "energy harvesting",
+          "nanomaterials"
+        ],
+        "previous_collaborations": 1,
+        "common_publications": [
+          "Quantum Dot Arrays for Enhanced Solar Energy Conversion"
+        ],
+        "email": "tanaka@u-tokyo.ac.jp",
+        "profile_url": "https://www.u-tokyo.ac.jp/faculty/tanaka-yuki"
+      },
+      {
+        "faculty_profile_id": "faculty_012",
+        "name": "Dr. Maria Gonzalez",
+        "institution": "Technical University of Denmark",
+        "relevance_score": 0.84,
+        "complementary_expertise": [
+          "energy system modeling",
+          "techno-economic analysis",
+          "life cycle assessment",
+          "renewable energy integration",
+          "policy analysis"
+        ],
+        "shared_interests": [
+          "renewable energy",
+          "sustainability",
+          "energy systems",
+          "solar technology"
+        ],
+        "previous_collaborations": 0,
+        "common_publications": [],
+        "email": "magonzalez@dtu.dk",
+        "profile_url": "https://www.dtu.dk/english/service/phonebook/person?id=12345"
+      }
+    ]
+  },
+  "faculty_reference_data": [
+    {
+      "profile_id": "faculty_001",
+      "name": "Dr. Jennifer Martinez",
+      "email": "jmartinez@university.edu",
+      "institution": "University of California, San Francisco",
+      "department": "Department of Biomedical Informatics",
+      "career_stage": "assistant_professor",
+      "research_interests": [
+        "artificial intelligence in healthcare",
+        "machine learning for clinical decision support",
+        "electronic health records analysis",
+        "medical data mining",
+        "personalized medicine"
+      ],
+      "methodologies": ["computational", "experimental", "clinical"],
+      "h_index": 15,
+      "total_citations": 847,
+      "years_active": 6
+    },
+    {
+      "profile_id": "faculty_002", 
+      "name": "Dr. David Park",
+      "email": "dpark@cstechuniv.edu",
+      "institution": "Computer Science & Technology University",
+      "department": "Department of Computer Science",
+      "career_stage": "associate_professor",
+      "research_interests": [
+        "distributed systems",
+        "consensus algorithms",
+        "fault tolerance",
+        "Byzantine fault tolerance",
+        "blockchain technology"
+      ],
+      "methodologies": ["theoretical", "computational"],
+      "h_index": 22,
+      "total_citations": 1456,
+      "years_active": 10
+    },
+    {
+      "profile_id": "faculty_003",
+      "name": "Dr. Amanda Foster",
+      "email": "afoster@energytech.edu",
+      "institution": "Institute of Energy Technology",
+      "department": "Department of Materials Science and Engineering",
+      "career_stage": "full_professor", 
+      "research_interests": [
+        "photovoltaic materials",
+        "solar cell efficiency",
+        "renewable energy systems",
+        "materials characterization",
+        "energy conversion"
+      ],
+      "methodologies": ["experimental", "computational"],
+      "h_index": 35,
+      "total_citations": 3421,
+      "years_active": 18
+    }
+  ],
+  "funding_reference_data": [
+    {
+      "opportunity_id": "NIH-2024-AI-HEALTHCARE-001",
+      "title": "Artificial Intelligence in Healthcare Research Initiative",
+      "agency": "National Institutes of Health",
+      "total_budget": "50000000",
+      "max_award_amount": "500000",
+      "min_award_amount": "100000",
+      "deadline": "2024-06-15",
+      "award_start_date": "2024-09-01",
+      "project_duration_months": 36,
+      "eligible_career_stages": ["assistant_professor", "associate_professor", "full_professor"],
+      "research_areas": [
+        "artificial intelligence",
+        "machine learning",
+        "healthcare applications",
+        "clinical decision support",
+        "medical data analysis"
+      ],
+      "preferred_methodologies": ["computational", "experimental", "clinical"],
+      "description": "This initiative seeks to advance the application of artificial intelligence and machine learning technologies in healthcare settings. Projects should demonstrate clear clinical relevance and potential for improving patient outcomes.",
+      "url": "https://grants.nih.gov/grants/guide/rfa/RFA-AI-HEALTHCARE-001.html"
+    },
+    {
+      "opportunity_id": "NSF-2024-CS-FOUNDATIONS-002",
+      "title": "Computer Science Theoretical Foundations Program",
+      "agency": "National Science Foundation",
+      "total_budget": "25000000",
+      "max_award_amount": "300000",
+      "min_award_amount": "75000",
+      "deadline": "2024-05-30",
+      "award_start_date": "2024-08-15",
+      "project_duration_months": 24,
+      "eligible_career_stages": ["assistant_professor", "associate_professor", "full_professor"],
+      "research_areas": [
+        "theoretical computer science",
+        "algorithms",
+        "distributed computing",
+        "computational complexity",
+        "formal methods"
+      ],
+      "preferred_methodologies": ["theoretical", "computational"],
+      "description": "This program supports fundamental research in theoretical computer science with emphasis on algorithmic innovation and formal analysis. Projects should advance the theoretical foundations of computing.",
+      "url": "https://www.nsf.gov/funding/pgm_summ.jsp?pims_id=502774"
+    },
+    {
+      "opportunity_id": "DOE-2024-RENEWABLE-ENERGY-003",
+      "title": "Advanced Renewable Energy Technologies Program",
+      "agency": "Department of Energy",
+      "total_budget": "75000000",
+      "max_award_amount": "400000",
+      "min_award_amount": "150000",
+      "deadline": "2024-04-20",
+      "award_start_date": "2024-07-01",
+      "project_duration_months": 30,
+      "eligible_career_stages": ["assistant_professor", "associate_professor", "full_professor"],
+      "research_areas": [
+        "renewable energy",
+        "solar technology",
+        "photovoltaics",
+        "energy materials",
+        "energy conversion efficiency"
+      ],
+      "preferred_methodologies": ["experimental", "computational"],
+      "description": "This program aims to advance renewable energy technologies with focus on breakthrough innovations in solar energy conversion, materials development, and system efficiency improvements.",
+      "url": "https://www.energy.gov/eere/solar/advanced-renewable-energy-technologies-program"
+    }
+  ]
+}

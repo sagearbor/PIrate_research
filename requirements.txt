@@ -16,6 +16,8 @@ beautifulsoup4
 
 lxml
 
+aiohttp # For async HTTP requests and circuit breaker health checks
+
 # Testing
 
 pytest
@@ -36,6 +38,13 @@ pandas # For data analysis and export capabilities
 # AI / LLM Integration
 
 google-generativeai
+
+# Monitoring and Observability
+prometheus-client # For metrics collection
+prometheus-fastapi-instrumentator # FastAPI Prometheus integration
+structlog # Structured logging
+python-json-logger # JSON log formatting
+psutil # System metrics (CPU, memory, disk)
 
 # Agent-to-Agent Communication (Future Libraries)
 

@@ -1,0 +1,11 @@
+{
+  "title": "Past Deadline Grant",
+  "agency": "Test Agency",
+  "opportunity_id": "TEST-INVALID-001",
+  "deadline": "2020-01-01",
+  "eligible_career_stages": [],
+  "research_areas": [],
+  "description": "This grant has an invalid past deadline and empty required fields",
+  "url": "not-a-valid-url",
+  "source": "TEST"
+}

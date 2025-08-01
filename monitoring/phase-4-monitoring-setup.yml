@@ -1,0 +1,179 @@
+# Phase 4 Infrastructure Monitoring Configuration
+# This file contains specialized monitoring configurations for Phase 4 components:
+# - Dashboard monitoring and analytics
+# - Analytics cache performance tracking
+# - Export system monitoring
+# - Configuration management monitoring
+
+# Additional Prometheus job configurations for enhanced Phase 4 monitoring
+prometheus_additional_jobs:
+  # Dashboard metrics collection with higher frequency
+  - job_name: 'phase-4-dashboard'
+    static_configs:
+      - targets: ['host.docker.internal:8000']
+    metrics_path: '/metrics'
+    scrape_interval: 15s  # More frequent for dashboard responsiveness
+    scrape_timeout: 10s
+    params:
+      collect[]:
+        - 'dashboard_*'
+        - 'analytics_*'
+        - 'export_*'
+        - 'config_*'
+
+# Grafana alerting rules specific to Phase 4 components
+phase_4_alerting_rules:
+  # Dashboard performance thresholds
+  dashboard_performance:
+    load_time_warning_threshold: 2.0  # seconds
+    load_time_critical_threshold: 5.0  # seconds
+    auto_refresh_failure_window: 30m
+    
+  # Analytics performance thresholds  
+  analytics_performance:
+    cache_hit_rate_threshold: 0.7  # 70%
+    cache_ttl_seconds: 900  # 15 minutes
+    data_freshness_warning_hours: 24
+    data_freshness_critical_hours: 48
+    processing_slowdown_threshold: 30  # seconds
+    
+  # Export system thresholds
+  export_performance:
+    failure_rate_threshold: 0.1  # 10%
+    processing_warning_threshold: 10  # seconds for 50+ items
+    processing_critical_threshold: 30  # seconds
+    large_file_threshold: 100000000  # 100MB
+    
+  # Configuration management thresholds
+  config_performance:
+    load_failure_rate_threshold: 0.1  # 10%
+    load_time_threshold: 0.05  # 50ms
+    cache_staleness_threshold: 3600  # 1 hour
+
+# Phase 4 specific monitoring dashboards
+monitoring_dashboards:
+  - name: "Phase 4 Dashboard Analytics"
+    file: "phase-4-dashboard-analytics.json"
+    description: "Comprehensive monitoring for Phase 4 dashboard, analytics, export, and config systems"
+    refresh_rate: "30s"
+    tags: ["phase-4", "dashboard", "analytics", "export", "config"]
+
+# Capacity planning recommendations
+capacity_planning:
+  dashboard:
+    target_concurrent_users: 50
+    target_load_time: "< 2 seconds"
+    auto_refresh_interval: 30  # seconds
+    
+  analytics:
+    cache_size_mb: 256
+    cache_ttl_minutes: 15
+    data_processing_timeout: 30  # seconds
+    
+  export_system:
+    max_concurrent_exports: 10
+    max_file_size_mb: 100
+    processing_timeout: 60  # seconds
+    
+  configuration:
+    max_config_size_mb: 10
+    load_timeout: 0.05  # 50ms
+    cache_duration_hours: 1
+
+# Performance targets and SLAs
+performance_targets:
+  dashboard:
+    availability: 99.9%
+    load_time_p95: 2.0  # seconds
+    load_time_p99: 5.0  # seconds
+    
+  analytics:
+    cache_hit_rate: 70%  # minimum
+    data_freshness: 24  # hours maximum
+    processing_time_p95: 10.0  # seconds
+    
+  export_system:
+    success_rate: 95%  # minimum
+    processing_time_p95: 10.0  # seconds for 50+ items
+    file_generation_timeout: 60  # seconds
+    
+  configuration:
+    load_success_rate: 99%  # minimum
+    load_time_p95: 0.05  # 50ms
+    validation_error_rate: 1%  # maximum
+
+# Disk space monitoring for Phase 4 components
+disk_monitoring:
+  export_output_directory:
+    path: "/data/exports"
+    warning_threshold: 80%  # disk usage
+    critical_threshold: 90%
+    cleanup_policy: "7 days retention"
+    
+  analytics_cache_directory:
+    path: "/data/analytics_cache"
+    warning_threshold: 75%
+    critical_threshold: 85%
+    cleanup_policy: "TTL-based automatic cleanup"
+    
+  config_cache_directory:
+    path: "/data/config_cache"
+    warning_threshold: 70%
+    critical_threshold: 80%
+    cleanup_policy: "1 hour TTL"
+
+# Network monitoring for Phase 4 external dependencies
+network_monitoring:
+  dashboard_external_resources:
+    - name: "CDN Resources"
+      endpoints: ["https://cdnjs.cloudflare.com", "https://fonts.googleapis.com"]
+      timeout: 5s
+      
+  export_template_resources:
+    - name: "Template Assets"
+      endpoints: ["LaTeX template servers", "HTML/CSS frameworks"]
+      timeout: 10s
+      
+  configuration_validation_services:
+    - name: "Schema Validation Services"
+      endpoints: ["JSON Schema validators", "YAML parsers"]
+      timeout: 3s
+
+# Security monitoring enhancements for Phase 4
+security_monitoring:
+  dashboard_access:
+    failed_login_threshold: 10  # per hour
+    unusual_access_pattern_threshold: 100  # requests per 5 minutes
+    admin_action_logging: true
+    
+  export_system_security:
+    file_access_logging: true
+    export_request_rate_limiting: 50  # per hour per user
+    sensitive_data_export_alerts: true
+    
+  configuration_security:
+    config_change_auditing: true
+    unauthorized_access_alerts: true
+    validation_bypass_detection: true
+
+# Backup and recovery monitoring
+backup_monitoring:
+  dashboard_configuration:
+    backup_frequency: "daily"
+    retention_period: "30 days"
+    integrity_checks: true
+    
+  analytics_data:
+    backup_frequency: "daily"
+    retention_period: "90 days"
+    incremental_backups: true
+    
+  export_templates:
+    backup_frequency: "weekly"
+    retention_period: "1 year"
+    version_control: true
+    
+  configuration_files:
+    backup_frequency: "hourly"
+    retention_period: "30 days"
+    change_tracking: true

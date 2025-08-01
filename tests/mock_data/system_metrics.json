@@ -1,0 +1,211 @@
+{
+  "system_overview": {
+    "overview": {
+      "total_matches": 45,
+      "total_ideas": 135,
+      "total_collaborator_suggestions": 89,
+      "total_notifications": 42,
+      "recent_matches_7d": 12
+    },
+    "match_quality": {
+      "high": 18,
+      "medium": 22,
+      "low": 5
+    },
+    "system_health": {
+      "status": "healthy",
+      "last_data_update": "2025-01-31T10:30:00.000Z",
+      "data_freshness_hours": 2.5
+    },
+    "timestamp": "2025-01-31T13:00:00.000Z"
+  },
+  "agent_performance": {
+    "matcher_agent": {
+      "total_matches": 45,
+      "avg_score": 0.756,
+      "high_quality_matches": 18
+    },
+    "idea_agent": {
+      "total_ideas": 135,
+      "variant_distribution": {
+        "conservative": 52,
+        "innovative": 48,
+        "stretch": 35
+      },
+      "avg_innovation_score": 0.672
+    },
+    "collaborator_agent": {
+      "total_suggestions": 89,
+      "avg_relevance_score": 0.821,
+      "high_relevance_suggestions": 67
+    },
+    "notification_agent": {
+      "total_notifications": 42,
+      "sent_notifications": 40,
+      "success_rate": 0.952
+    },
+    "timestamp": "2025-01-31T13:00:00.000Z"
+  },
+  "recommendation_effectiveness": {
+    "effectiveness_by_period": {
+      "last_7_days": {
+        "total_matches": 12,
+        "avg_score": 0.798,
+        "score_distribution": {
+          "high": 7,
+          "medium": 4,
+          "low": 1
+        },
+        "response_rate": 0.25
+      },
+      "last_30_days": {
+        "total_matches": 35,
+        "avg_score": 0.745,
+        "score_distribution": {
+          "high": 15,
+          "medium": 16,
+          "low": 4
+        },
+        "response_rate": 0.314
+      },
+      "last_90_days": {
+        "total_matches": 45,
+        "avg_score": 0.756,
+        "score_distribution": {
+          "high": 18,
+          "medium": 22,
+          "low": 5
+        },
+        "response_rate": 0.267
+      }
+    },
+    "trends": {
+      "match_volume_trend": "increasing",
+      "quality_trend": "stable",
+      "response_trend": "stable"
+    },
+    "timestamp": "2025-01-31T13:00:00.000Z"
+  },
+  "research_insights": {
+    "research_trends": {
+      "top_research_areas": [
+        ["machine learning", 15],
+        ["computational biology", 12],
+        ["data science", 10],
+        ["artificial intelligence", 8],
+        ["biomedical informatics", 7],
+        ["natural language processing", 6],
+        ["computer vision", 5],
+        ["deep learning", 4],
+        ["genomics", 4],
+        ["bioinformatics", 3]
+      ],
+      "top_methodologies": [
+        ["computational", 28],
+        ["experimental", 22],
+        ["mixed_methods", 18],
+        ["theoretical", 12],
+        ["observational", 8],
+        ["clinical", 6],
+        ["survey", 4],
+        ["qualitative", 3],
+        ["meta_analysis", 2]
+      ],
+      "career_stage_distribution": {
+        "assistant_professor": 18,
+        "associate_professor": 12,
+        "postdoc": 8,
+        "full_professor": 5,
+        "research_scientist": 2
+      }
+    },
+    "idea_quality_metrics": {
+      "avg_innovation_level": 0.672,
+      "avg_feasibility_score": 0.789,
+      "avg_impact_potential": 0.734,
+      "total_ideas": 135
+    },
+    "insights": {
+      "most_active_research_area": "machine learning",
+      "most_common_methodology": "computational",
+      "dominant_career_stage": "assistant_professor"
+    },
+    "timestamp": "2025-01-31T13:00:00.000Z"
+  },
+  "system_health": {
+    "status": "healthy",
+    "last_data_update": "2025-01-31T10:30:00.000Z",
+    "data_freshness_hours": 2.5
+  },
+  "external_services": {
+    "nih_reporter": {
+      "service": "nih_reporter",
+      "status": "healthy",
+      "circuit_breaker": {
+        "state": "closed",
+        "total_calls": 156,
+        "successful_calls": 152,
+        "failed_calls": 4,
+        "success_rate": 0.974
+      },
+      "last_check": 1640995200.0
+    },
+    "google_scholar": {
+      "service": "google_scholar",
+      "status": "healthy",
+      "circuit_breaker": {
+        "state": "closed",
+        "total_calls": 89,
+        "successful_calls": 87,
+        "failed_calls": 2,
+        "success_rate": 0.978
+      },
+      "last_check": 1640995150.0
+    },
+    "pubmed": {
+      "service": "pubmed",
+      "status": "degraded",
+      "circuit_breaker": {
+        "state": "half_open",
+        "total_calls": 45,
+        "successful_calls": 38,
+        "failed_calls": 7,
+        "success_rate": 0.844
+      },
+      "last_check": 1640995100.0
+    }
+  },
+  "security_status": {
+    "summary": {
+      "total_events_24h": 18,
+      "high_risk_events": 1,
+      "suspicious_ips": 2,
+      "blocked_ips": 0,
+      "active_patterns": 12
+    },
+    "event_types": {
+      "suspicious_activity": 8,
+      "rate_limit_exceeded": 6,
+      "auth_failure": 3,
+      "potential_attack": 1
+    },
+    "security_levels": {
+      "low": 12,
+      "medium": 5,
+      "high": 1
+    },
+    "top_suspicious_ips": [
+      {"ip": "192.168.1.100", "risk_score": 32.5},
+      {"ip": "10.0.0.75", "risk_score": 28.1}
+    ],
+    "rate_limiter": {
+      "max_requests": 100,
+      "window_seconds": 60,
+      "active_ips": 15,
+      "blocked_ips": 0,
+      "warning_ips": 2
+    }
+  },
+  "generated_at": "2025-01-31T13:00:00.000Z",
+  "cache_ttl_minutes": 15
+}

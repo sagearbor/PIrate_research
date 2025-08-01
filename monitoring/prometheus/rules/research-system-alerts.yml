@@ -1,0 +1,354 @@
+groups:
+  - name: research_system_alerts
+    rules:
+      # API Health Alerts
+      - alert: APIHighErrorRate
+        expr: rate(http_requests_total{status=~"5.."}[5m]) > 0.1
+        for: 2m
+        labels:
+          severity: critical
+          service: research-api
+        annotations:
+          summary: "High API error rate detected"
+          description: "API error rate is {{ $value | humanizePercentage }} for the last 5 minutes"
+
+      - alert: APIHighLatency
+        expr: histogram_quantile(0.95, rate(http_request_duration_seconds_bucket[5m])) > 1
+        for: 5m
+        labels:
+          severity: warning
+          service: research-api
+        annotations:
+          summary: "High API latency detected"
+          description: "95th percentile latency is {{ $value }}s for the last 5 minutes"
+
+      - alert: APIDown
+        expr: up{job="research-api"} == 0
+        for: 1m
+        labels:
+          severity: critical
+          service: research-api
+        annotations:
+          summary: "Research API is down"
+          description: "The Research API has been down for more than 1 minute"
+
+      # System Resource Alerts
+      - alert: HighCPUUsage
+        expr: system_cpu_usage_percent > 80
+        for: 5m
+        labels:
+          severity: warning
+          service: research-api
+        annotations:
+          summary: "High CPU usage detected"
+          description: "CPU usage is {{ $value }}% for the last 5 minutes"
+
+      - alert: HighMemoryUsage
+        expr: (system_memory_usage_bytes / (1024*1024*1024)) > 2
+        for: 5m
+        labels:
+          severity: warning
+          service: research-api
+        annotations:
+          summary: "High memory usage detected"
+          description: "Memory usage is {{ $value | humanize }}GB for the last 5 minutes"
+
+      # Agent Performance Alerts
+      - alert: AgentExecutionFailureRate
+        expr: rate(agent_executions_total{status="error"}[10m]) > 0.05
+        for: 5m
+        labels:
+          severity: warning
+          service: research-agents
+        annotations:
+          summary: "High agent execution failure rate"
+          description: "Agent {{ $labels.agent_name }} has a failure rate of {{ $value | humanizePercentage }} for the last 10 minutes"
+
+      - alert: AgentHighExecutionTime
+        expr: histogram_quantile(0.95, rate(agent_execution_duration_seconds_bucket[10m])) > 30
+        for: 5m
+        labels:
+          severity: warning
+          service: research-agents
+        annotations:
+          summary: "Agent execution time is high"
+          description: "Agent {{ $labels.agent_name }} 95th percentile execution time is {{ $value }}s"
+
+      - alert: AgentQueueBacklog
+        expr: agent_queue_size > 100
+        for: 5m
+        labels:
+          severity: warning
+          service: research-agents
+        annotations:
+          summary: "Agent queue backlog detected"
+          description: "Agent {{ $labels.agent_name }} has {{ $value }} items in queue"
+
+      # External Service Alerts
+      - alert: ExternalAPIHighErrorRate
+        expr: rate(external_api_calls_total{status="error"}[10m]) > 0.1
+        for: 5m
+        labels:
+          severity: warning
+          service: external-apis
+        annotations:
+          summary: "High external API error rate"
+          description: "External service {{ $labels.service }}/{{ $labels.endpoint }} has error rate of {{ $value | humanizePercentage }}"
+
+      - alert: ExternalAPIRateLimitHits
+        expr: increase(external_api_rate_limit_hits_total[1h]) > 10
+        for: 1m
+        labels:
+          severity: warning
+          service: external-apis
+        annotations:
+          summary: "Frequent rate limit hits detected"
+          description: "Service {{ $labels.service }} hit rate limits {{ $value }} times in the last hour"
+
+      # Data Processing Alerts
+      - alert: DataIngestionStalled
+        expr: increase(funding_opportunities_scraped_total[1h]) == 0 and increase(faculty_profiles_discovered_total[1h]) == 0
+        for: 30m
+        labels:
+          severity: warning
+          service: data-ingestion
+        annotations:
+          summary: "Data ingestion appears stalled"
+          description: "No new data has been ingested for the last hour"
+
+      - alert: LowMatchGenerationRate
+        expr: rate(matches_generated_total[1h]) < 0.1
+        for: 30m
+        labels:
+          severity: warning
+          service: matching-engine
+        annotations:
+          summary: "Low match generation rate"
+          description: "Match generation rate is {{ $value }} per hour, which is unusually low"
+
+  - name: system_health_alerts
+    rules:
+      # Disk Space Alerts
+      - alert: LowDiskSpace
+        expr: (node_filesystem_avail_bytes{mountpoint="/"} / node_filesystem_size_bytes{mountpoint="/"}) * 100 < 20
+        for: 5m
+        labels:
+          severity: warning
+        annotations:
+          summary: "Low disk space"
+          description: "Disk space is below 20% ({{ $value }}% available)"
+
+      - alert: CriticalDiskSpace
+        expr: (node_filesystem_avail_bytes{mountpoint="/"} / node_filesystem_size_bytes{mountpoint="/"}) * 100 < 10
+        for: 2m
+        labels:
+          severity: critical
+        annotations:
+          summary: "Critical disk space"
+          description: "Disk space is critically low ({{ $value }}% available)"
+
+      # Load Average Alerts
+      - alert: HighLoadAverage
+        expr: node_load15 > 2
+        for: 10m
+        labels:
+          severity: warning
+        annotations:
+          summary: "High system load"
+          description: "15-minute load average is {{ $value }}"
+
+  - name: security_alerts
+    rules:
+      # Security monitoring alerts would go here
+      # These would be based on structured log analysis in a production system
+      - alert: SuspiciousAPIActivity
+        expr: increase(http_requests_total{status="401"}[1h]) > 50
+        for: 5m
+        labels:
+          severity: warning
+          category: security
+        annotations:
+          summary: "High number of authentication failures"
+          description: "{{ $value }} authentication failures in the last hour"
+
+      - alert: UnusualTrafficPattern
+        expr: rate(http_requests_total[5m]) > 10
+        for: 10m
+        labels:
+          severity: info
+          category: security
+        annotations:
+          summary: "Unusually high traffic detected"
+          description: "Request rate of {{ $value }} requests/second is higher than normal"
+
+  - name: phase_4_dashboard_alerts
+    rules:
+      # Dashboard Performance Alerts
+      - alert: DashboardHighLoadTime
+        expr: histogram_quantile(0.95, rate(dashboard_load_time_seconds_bucket[5m])) > 2
+        for: 5m
+        labels:
+          severity: warning
+          service: dashboard
+        annotations:
+          summary: "Dashboard load time is high"
+          description: "Dashboard 95th percentile load time is {{ $value }}s, exceeding 2 second target"
+
+      - alert: DashboardCriticalLoadTime
+        expr: histogram_quantile(0.95, rate(dashboard_load_time_seconds_bucket[5m])) > 5
+        for: 2m
+        labels:
+          severity: critical
+          service: dashboard
+        annotations:
+          summary: "Dashboard load time is critically high"
+          description: "Dashboard 95th percentile load time is {{ $value }}s, exceeding 5 second critical threshold"
+
+      - alert: DashboardAutoRefreshFailure
+        expr: increase(dashboard_auto_refresh_total[1h]) == 0 and increase(dashboard_page_views_total[1h]) > 0
+        for: 30m
+        labels:
+          severity: warning
+          service: dashboard
+        annotations:
+          summary: "Dashboard auto-refresh appears broken"
+          description: "No auto-refresh events detected for 30 minutes despite page views"
+
+  - name: phase_4_analytics_alerts
+    rules:
+      # Analytics Cache Performance Alerts
+      - alert: AnalyticsCacheLowHitRate
+        expr: rate(analytics_cache_hits_total[10m]) / (rate(analytics_cache_hits_total[10m]) + rate(analytics_cache_misses_total[10m])) < 0.7
+        for: 15m
+        labels:
+          severity: warning
+          service: analytics
+        annotations:
+          summary: "Analytics cache hit rate is low"
+          description: "Cache hit rate is {{ $value | humanizePercentage }}, below 70% target"
+
+      - alert: AnalyticsCacheStale
+        expr: analytics_cache_age_seconds > 900
+        for: 5m
+        labels:
+          severity: warning
+          service: analytics
+        annotations:
+          summary: "Analytics cache is stale"
+          description: "Analytics cache age is {{ $value }}s, exceeding 15 minute TTL"
+
+      - alert: AnalyticsDataStale
+        expr: analytics_data_freshness_hours > 24
+        for: 30m
+        labels:
+          severity: warning
+          service: analytics
+        annotations:
+          summary: "Analytics data is stale"
+          description: "Analytics data is {{ $value }} hours old, exceeding 24 hour freshness target"
+
+      - alert: AnalyticsDataCriticallyStale
+        expr: analytics_data_freshness_hours > 48
+        for: 15m
+        labels:
+          severity: critical
+          service: analytics
+        annotations:
+          summary: "Analytics data is critically stale"
+          description: "Analytics data is {{ $value }} hours old, exceeding 48 hour critical threshold"
+
+      - alert: AnalyticsProcessingSlowdown
+        expr: histogram_quantile(0.95, rate(analytics_processing_duration_seconds_bucket[10m])) > 30
+        for: 10m
+        labels:
+          severity: warning
+          service: analytics
+        annotations:
+          summary: "Analytics processing is slow"
+          description: "Analytics processing 95th percentile duration is {{ $value }}s"
+
+  - name: phase_4_export_alerts
+    rules:
+      # Export System Performance Alerts
+      - alert: ExportHighFailureRate
+        expr: rate(export_requests_total{status="error"}[10m]) / rate(export_requests_total[10m]) > 0.1
+        for: 5m
+        labels:
+          severity: warning
+          service: export-system
+        annotations:
+          summary: "Export system has high failure rate"
+          description: "Export failure rate is {{ $value | humanizePercentage }} for the last 10 minutes"
+
+      - alert: ExportProcessingSlowdown
+        expr: histogram_quantile(0.95, rate(export_processing_duration_seconds_bucket[10m])) > 10
+        for: 10m
+        labels:
+          severity: warning
+          service: export-system
+        annotations:
+          summary: "Export processing is slow"
+          description: "Export processing 95th percentile duration is {{ $value }}s, exceeding 10 second target for 50+ items"
+
+      - alert: ExportProcessingCriticalSlowdown
+        expr: histogram_quantile(0.95, rate(export_processing_duration_seconds_bucket[10m])) > 30
+        for: 5m
+        labels:
+          severity: critical
+          service: export-system
+        annotations:
+          summary: "Export processing is critically slow"
+          description: "Export processing 95th percentile duration is {{ $value }}s, exceeding 30 second critical threshold"
+
+      - alert: ExportLargeFileGeneration
+        expr: histogram_quantile(0.95, rate(export_file_size_bytes_bucket[10m])) > 100000000
+        for: 5m
+        labels:
+          severity: warning
+          service: export-system
+        annotations:
+          summary: "Export generating unusually large files"
+          description: "Export file size 95th percentile is {{ $value | humanize }}B (>100MB)"
+
+  - name: phase_4_config_alerts
+    rules:
+      # Configuration Management Performance Alerts
+      - alert: ConfigLoadHighFailureRate
+        expr: rate(config_load_operations_total{status="error"}[10m]) / rate(config_load_operations_total[10m]) > 0.1
+        for: 5m
+        labels:
+          severity: warning
+          service: config-management
+        annotations:
+          summary: "Configuration load failure rate is high"
+          description: "Config load failure rate is {{ $value | humanizePercentage }} for {{ $labels.config_type }}"
+
+      - alert: ConfigLoadSlowdown
+        expr: histogram_quantile(0.95, rate(config_load_duration_seconds_bucket[10m])) > 0.05
+        for: 10m
+        labels:
+          severity: warning
+          service: config-management
+        annotations:
+          summary: "Configuration loading is slow"
+          description: "Config load 95th percentile duration is {{ $value }}s, exceeding 50ms target"
+
+      - alert: ConfigValidationErrors
+        expr: rate(config_validation_errors_total[1h]) > 0
+        for: 1m
+        labels:
+          severity: warning
+          service: config-management
+        annotations:
+          summary: "Configuration validation errors detected"
+          description: "{{ $value }} validation errors per hour for {{ $labels.config_type }}: {{ $labels.error_type }}"
+
+      - alert: ConfigCacheStale
+        expr: config_cache_age_seconds > 3600
+        for: 5m
+        labels:
+          severity: info
+          service: config-management
+        annotations:
+          summary: "Configuration cache is stale"
+          description: "{{ $labels.config_type }} cache age is {{ $value }}s (>1 hour)"

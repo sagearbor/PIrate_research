@@ -1,0 +1,271 @@
+name: Release Pipeline
+
+on:
+  push:
+    tags:
+      - 'v*'
+  release:
+    types: [published]
+
+env:
+  PYTHON_VERSION: '3.10'
+  DOCKER_REGISTRY: ghcr.io
+  IMAGE_NAME: ${{ github.repository }}
+
+jobs:
+  # Release Build
+  release-build:
+    runs-on: ubuntu-latest
+    name: Release Build
+    
+    outputs:
+      version: ${{ steps.version.outputs.version }}
+      
+    steps:
+    - name: Checkout code
+      uses: actions/checkout@v4
+      
+    - name: Extract version
+      id: version
+      run: |
+        VERSION=${GITHUB_REF#refs/tags/}
+        echo "version=$VERSION" >> $GITHUB_OUTPUT
+        echo "Building release version: $VERSION"
+        
+    - name: Set up Docker Buildx
+      uses: docker/setup-buildx-action@v3
+      
+    - name: Log in to Container Registry
+      uses: docker/login-action@v3
+      with:
+        registry: ${{ env.DOCKER_REGISTRY }}
+        username: ${{ github.actor }}
+        password: ${{ secrets.GITHUB_TOKEN }}
+        
+    - name: Build and push release image
+      uses: docker/build-push-action@v5
+      with:
+        context: .
+        file: ./Dockerfile
+        push: true
+        tags: |
+          ${{ env.DOCKER_REGISTRY }}/${{ env.IMAGE_NAME }}:${{ steps.version.outputs.version }}
+          ${{ env.DOCKER_REGISTRY }}/${{ env.IMAGE_NAME }}:stable
+        labels: |
+          org.opencontainers.image.title=Faculty Research Opportunity Notifier
+          org.opencontainers.image.description=AI-driven multi-agent system for research opportunity matching
+          org.opencontainers.image.version=${{ steps.version.outputs.version }}
+          org.opencontainers.image.source=${{ github.repositoryUrl }}
+          org.opencontainers.image.revision=${{ github.sha }}
+          org.opencontainers.image.created=${{ github.event.head_commit.timestamp }}
+        cache-from: type=gha
+        cache-to: type=gha,mode=max
+        
+    - name: Generate release artifacts
+      run: |
+        mkdir -p release-artifacts
+        
+        # Create deployment manifests
+        cat > release-artifacts/docker-compose.yml << EOF
+        version: '3.8'
+        services:
+          research-agent:
+            image: ${{ env.DOCKER_REGISTRY }}/${{ env.IMAGE_NAME }}:${{ steps.version.outputs.version }}
+            ports:
+              - "8000:8000"
+            environment:
+              - PYTHONUNBUFFERED=1
+            volumes:
+              - ./data:/app/data
+              - ./config:/app/config
+            restart: unless-stopped
+            healthcheck:
+              test: ["CMD", "curl", "-f", "http://localhost:8000/health"]
+              interval: 30s
+              timeout: 10s
+              retries: 3
+              start_period: 30s
+        EOF
+        
+        # Create Kubernetes deployment manifest
+        cat > release-artifacts/k8s-deployment.yaml << EOF
+        apiVersion: apps/v1
+        kind: Deployment
+        metadata:
+          name: research-agent
+          labels:
+            app: research-agent
+            version: ${{ steps.version.outputs.version }}
+        spec:
+          replicas: 2
+          selector:
+            matchLabels:
+              app: research-agent
+          template:
+            metadata:
+              labels:
+                app: research-agent
+                version: ${{ steps.version.outputs.version }}
+            spec:
+              containers:
+              - name: research-agent
+                image: ${{ env.DOCKER_REGISTRY }}/${{ env.IMAGE_NAME }}:${{ steps.version.outputs.version }}
+                ports:
+                - containerPort: 8000
+                env:
+                - name: PYTHONUNBUFFERED
+                  value: "1"
+                livenessProbe:
+                  httpGet:
+                    path: /health
+                    port: 8000
+                  initialDelaySeconds: 30
+                  periodSeconds: 30
+                readinessProbe:
+                  httpGet:
+                    path: /health
+                    port: 8000
+                  initialDelaySeconds: 5
+                  periodSeconds: 10
+                resources:
+                  requests:
+                    memory: "256Mi"
+                    cpu: "100m"
+                  limits:
+                    memory: "512Mi"
+                    cpu: "500m"
+        ---
+        apiVersion: v1
+        kind: Service
+        metadata:
+          name: research-agent-service
+        spec:
+          selector:
+            app: research-agent
+          ports:
+          - protocol: TCP
+            port: 80
+            targetPort: 8000
+          type: LoadBalancer
+        EOF
+        
+        # Create installation script
+        cat > release-artifacts/install.sh << EOF
+        #!/bin/bash
+        set -e
+        
+        echo "Installing Faculty Research Opportunity Notifier ${{ steps.version.outputs.version }}"
+        
+        # Check Docker installation
+        if ! command -v docker &> /dev/null; then
+            echo "Docker is required but not installed. Please install Docker first."
+            exit 1
+        fi
+        
+        # Create data directories
+        mkdir -p data/raw data/processed config
+        
+        # Pull the image
+        docker pull ${{ env.DOCKER_REGISTRY }}/${{ env.IMAGE_NAME }}:${{ steps.version.outputs.version }}
+        
+        # Start the service
+        docker-compose up -d
+        
+        echo "Service started successfully!"
+        echo "API available at: http://localhost:8000"
+        echo "Documentation at: http://localhost:8000/docs"
+        EOF
+        
+        chmod +x release-artifacts/install.sh
+        
+    - name: Upload release artifacts
+      uses: actions/upload-artifact@v3
+      with:
+        name: release-artifacts-${{ steps.version.outputs.version }}
+        path: release-artifacts/
+
+  # Security Scan for Release
+  release-security:
+    runs-on: ubuntu-latest
+    name: Release Security Scan
+    needs: release-build
+    
+    steps:
+    - name: Run Trivy vulnerability scanner
+      uses: aquasecurity/trivy-action@master
+      with:
+        image-ref: ${{ env.DOCKER_REGISTRY }}/${{ env.IMAGE_NAME }}:${{ needs.release-build.outputs.version }}
+        format: 'table'
+        exit-code: '1'
+        ignore-unfixed: true
+        vuln-type: 'os,library'
+        severity: 'CRITICAL,HIGH'
+
+  # Update Release
+  update-release:
+    runs-on: ubuntu-latest
+    name: Update Release
+    needs: [release-build, release-security]
+    if: github.event_name == 'release'
+    
+    steps:
+    - name: Download release artifacts
+      uses: actions/download-artifact@v3
+      with:
+        name: release-artifacts-${{ needs.release-build.outputs.version }}
+        path: release-artifacts/
+        
+    - name: Create release archive
+      run: |
+        cd release-artifacts
+        tar -czf ../research-agent-${{ needs.release-build.outputs.version }}.tar.gz *
+        cd ..
+        
+    - name: Upload release assets
+      uses: softprops/action-gh-release@v1
+      with:
+        files: |
+          research-agent-${{ needs.release-build.outputs.version }}.tar.gz
+        body: |
+          ## Faculty Research Opportunity Notifier ${{ needs.release-build.outputs.version }}
+          
+          ### 🚀 What's New
+          - Multi-agent architecture for research opportunity matching
+          - FastAPI-based REST API
+          - Docker containerization
+          - Comprehensive test suite (71 tests)
+          
+          ### 📦 Installation
+          
+          #### Docker (Recommended)
+          ```bash
+          docker pull ${{ env.DOCKER_REGISTRY }}/${{ env.IMAGE_NAME }}:${{ needs.release-build.outputs.version }}
+          docker run -p 8000:8000 ${{ env.DOCKER_REGISTRY }}/${{ env.IMAGE_NAME }}:${{ needs.release-build.outputs.version }}
+          ```
+          
+          #### Docker Compose
+          Download and extract the release archive, then:
+          ```bash
+          docker-compose up -d
+          ```
+          
+          #### Kubernetes
+          ```bash
+          kubectl apply -f k8s-deployment.yaml
+          ```
+          
+          ### 🔗 Quick Links
+          - API Documentation: `http://localhost:8000/docs`
+          - Health Check: `http://localhost:8000/health`
+          - Project Repository: ${{ github.repositoryUrl }}
+          
+          ### 🛠️ Technical Details
+          - Python 3.10+
+          - FastAPI framework
+          - Multi-agent pipeline architecture
+          - Docker multi-stage build
+          - Comprehensive test coverage
+          
+        generate_release_notes: true
+      env:
+        GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}

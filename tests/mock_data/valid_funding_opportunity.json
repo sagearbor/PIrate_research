@@ -1,0 +1,49 @@
+{
+  "title": "AI for Healthcare Innovation Grant",
+  "agency": "National Institutes of Health",
+  "opportunity_id": "NIH-2024-AI-HEALTHCARE-001",
+  "total_budget": "5000000.00",
+  "max_award_amount": "500000.00",
+  "min_award_amount": "50000.00",
+  "currency": "USD",
+  "deadline": "2025-03-15",
+  "award_start_date": "2025-07-01",
+  "project_duration_months": 36,
+  "eligible_career_stages": [
+    "assistant_professor",
+    "associate_professor",
+    "full_professor"
+  ],
+  "eligible_institutions": [
+    "research_university",
+    "medical_school",
+    "teaching_hospital"
+  ],
+  "citizenship_requirements": [
+    "US_citizen",
+    "permanent_resident"
+  ],
+  "research_areas": [
+    "artificial intelligence",
+    "machine learning",
+    "healthcare informatics",
+    "medical imaging",
+    "clinical decision support"
+  ],
+  "preferred_methodologies": [
+    "experimental",
+    "computational",
+    "clinical"
+  ],
+  "keywords": [
+    "AI",
+    "healthcare",
+    "clinical trials",
+    "medical AI",
+    "patient outcomes"
+  ],
+  "description": "This grant supports innovative research applying artificial intelligence and machine learning techniques to improve healthcare outcomes. Projects should demonstrate clear clinical relevance and potential for translation to practice. Interdisciplinary collaborations are encouraged.",
+  "url": "https://grants.nih.gov/grants/guide/rfa/AI-24-001.html",
+  "source": "NIH",
+  "is_active": true
+}

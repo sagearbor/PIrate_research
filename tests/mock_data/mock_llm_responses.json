@@ -1,0 +1,93 @@
+{
+  "conservative_responses": [
+    {
+      "variant_type": "conservative",
+      "title": "Investigating Healthcare AI through Machine Learning",
+      "research_question": "How can established machine learning methods be applied to improve healthcare informatics?",
+      "hypothesis": null,
+      "objectives": [
+        "Apply standard machine learning techniques to healthcare informatics",
+        "Validate existing approaches in the context of healthcare AI",
+        "Establish baseline measurements for healthcare AI applications"
+      ],
+      "key_references": [
+        "Key Research in Machine Learning (2023)",
+        "Advances in Healthcare AI Studies (2022)",
+        "Methodological Approaches to Machine Learning (2023)"
+      ],
+      "literature_gap": "Limited application of proven machine learning methods to healthcare AI"
+    }
+  ],
+  "innovative_responses": [
+    {
+      "variant_type": "innovative",
+      "title": "Advancing Healthcare AI through Machine Learning",
+      "research_question": "What novel machine learning approaches can advance our understanding of healthcare AI?",
+      "hypothesis": "We hypothesize that novel approaches with some established foundations in machine learning will significantly impact healthcare AI.",
+      "objectives": [
+        "Develop enhanced machine learning methodologies for healthcare AI",
+        "Integrate multiple approaches to advance healthcare AI research",
+        "Create novel frameworks for healthcare AI investigation"
+      ],
+      "key_references": [
+        "Key Research in Machine Learning (2023)",
+        "Advances in Healthcare AI Studies (2022)",
+        "Methodological Approaches to Machine Learning (2023)"
+      ],
+      "literature_gap": "Insufficient integration of advanced machine learning approaches in healthcare AI research"
+    }
+  ],
+  "stretch_responses": [
+    {
+      "variant_type": "stretch",
+      "title": "Revolutionizing Healthcare AI through Machine Learning",
+      "research_question": "How might breakthrough machine learning technologies revolutionize healthcare AI?",
+      "hypothesis": "We hypothesize that breakthrough methodologies and experimental techniques in machine learning will significantly impact healthcare AI.",
+      "objectives": [
+        "Pioneer breakthrough machine learning technologies for healthcare AI",
+        "Establish new paradigms in healthcare AI research",
+        "Develop transformative solutions for healthcare AI challenges"
+      ],
+      "key_references": [
+        "Key Research in Machine Learning (2023)",
+        "Advances in Healthcare AI Studies (2022)",
+        "Methodological Approaches to Machine Learning (2023)"
+      ],
+      "literature_gap": "Lack of breakthrough machine learning technologies for transforming healthcare AI"
+    }
+  ],
+  "budget_estimates": {
+    "conservative": {
+      "assistant_professor": 75000,
+      "associate_professor": 125000,
+      "full_professor": 200000
+    },
+    "innovative": {
+      "assistant_professor": 100000,
+      "associate_professor": 175000,
+      "full_professor": 300000
+    },
+    "stretch": {
+      "assistant_professor": 150000,
+      "associate_professor": 250000,
+      "full_professor": 450000
+    }
+  },
+  "timeline_estimates": {
+    "conservative": {
+      "min_months": 12,
+      "max_months": 24,
+      "typical_months": 18
+    },
+    "innovative": {
+      "min_months": 18,
+      "max_months": 36,
+      "typical_months": 27
+    },
+    "stretch": {
+      "min_months": 24,
+      "max_months": 60,
+      "typical_months": 42
+    }
+  }
+}

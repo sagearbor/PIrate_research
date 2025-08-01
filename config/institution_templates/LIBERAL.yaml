@@ -1,0 +1,214 @@
+# Configuration for Liberal Arts College
+# Example configuration for a smaller liberal arts institution
+
+institution_name: "Liberal Arts College"
+institution_code: "LIBERAL"
+country: "United States"
+timezone: "America/Los_Angeles"
+
+# Administrative Contacts
+admin_contact: "provost@liberalarts.edu"
+system_admin: "tech@liberalarts.edu"
+support_email: "faculty-grants@liberalarts.edu"
+
+# Research Areas and Priorities - Broader humanities and social sciences focus
+primary_research_areas:
+  - "psychology"
+  - "sociology"
+  - "education"
+  - "environmental studies"
+  - "political science"
+  - "economics"
+  - "literature"
+  - "history"
+  - "philosophy"
+  - "interdisciplinary studies"
+
+excluded_research_areas:
+  - "large-scale clinical trials"
+  - "major engineering projects"
+
+research_keywords:
+  - "undergraduate research"
+  - "liberal arts education"
+  - "community engagement"
+  - "social justice"
+  - "sustainability"
+  - "digital humanities"
+  - "interdisciplinary collaboration"
+  - "student-faculty research"
+
+# Funding Source Configuration - Focus on education and smaller grants
+funding_sources:
+  nsf:
+    name: "National Science Foundation"
+    base_url: "https://www.nsf.gov/funding/"
+    enabled: true
+    priority: 1
+    scraping_frequency_hours: 24
+    custom_parameters:
+      include_educational: true
+      undergraduate_focus: true
+      max_award_preference: 500000  # Prefer smaller grants
+      focus_directorates:
+        - "EDU"  # Education & Human Resources
+        - "SBE"  # Social, Behavioral & Economic Sciences
+        - "BIO"  # Biological Sciences
+    eligibility_keywords:
+      - "education"
+      - "undergraduate research"
+      - "STEM education"
+      - "liberal arts"
+
+  neh:
+    name: "National Endowment for the Humanities"
+    base_url: "https://www.neh.gov/grants"
+    enabled: true
+    priority: 2
+    scraping_frequency_hours: 48
+    custom_parameters:
+      digital_humanities: true
+      public_humanities: true
+    eligibility_keywords:
+      - "humanities"
+      - "digital humanities"
+      - "cultural studies"
+      - "history"
+      - "literature"
+
+  nih:
+    name: "National Institutes of Health"
+    base_url: "https://reporter.nih.gov/"
+    enabled: true
+    priority: 3
+    scraping_frequency_hours: 48
+    custom_parameters:
+      small_grants_focus: true
+      min_award_amount: 25000
+      max_award_amount: 250000  # Focus on smaller NIH grants
+      preferred_mechanisms:
+        - "R15"  # Academic Research Enhancement Award
+        - "R25"  # Education Programs
+    eligibility_keywords:
+      - "psychology"
+      - "behavioral science"
+      - "health education"
+      - "undergraduate research"
+
+  private_foundations:
+    name: "Private Foundation Opportunities"
+    base_url: "https://foundationcenter.org/"
+    enabled: true
+    priority: 4
+    scraping_frequency_hours: 72
+    custom_parameters:
+      focus_areas:
+        - "education"
+        - "arts"
+        - "social justice"
+        - "environmental conservation"
+    eligibility_keywords:
+      - "liberal arts"
+      - "undergraduate education"
+      - "community engagement"
+
+# Faculty Data Sources
+faculty_data_sources:
+  google_scholar:
+    name: "Google Scholar"
+    source_type: "google_scholar"
+    enabled: true
+    update_frequency_hours: 168
+    rate_limit_per_hour: 50  # Lower rate for smaller institution
+    custom_parameters:
+      search_depth: "moderate"
+      include_citations: true
+      min_h_index: 2  # Lower threshold for liberal arts
+
+  institutional:
+    name: "Liberal Arts Faculty Directory"
+    source_type: "institutional"
+    enabled: true
+    update_frequency_hours: 24
+    rate_limit_per_hour: 500
+    custom_parameters:
+      directory_url: "https://www.liberalarts.edu/faculty"
+      include_emeritus: true
+      include_adjunct: false  # Focus on full-time faculty
+      departments:
+        - "Psychology"
+        - "Sociology"
+        - "Environmental Studies"
+        - "Education"
+        - "Political Science"
+        - "English"
+        - "History"
+
+  orcid:
+    name: "ORCID"
+    source_type: "orcid"
+    base_url: "https://pub.orcid.org/"
+    enabled: false  # Many liberal arts faculty may not have ORCID
+    update_frequency_hours: 168
+    rate_limit_per_hour: 25
+
+# Notification Settings
+notification_preferences:
+  - "email"
+
+notification_frequency: "weekly"  # Less frequent for smaller institution
+notification_template_override: null
+
+# Matching and Scoring Configuration
+matching_algorithm: "multi_dimensional_v1"
+minimum_match_score: 0.55  # Lower threshold to capture more opportunities
+
+career_stage_weights:
+  graduate_student: 0.5    # Lower priority (fewer grad programs)
+  postdoc: 0.7            # Fewer postdocs at liberal arts colleges
+  assistant_professor: 1.0
+  associate_professor: 1.0
+  full_professor: 0.9
+  emeritus: 0.4
+  research_scientist: 0.6  # Fewer research-only positions
+
+# System Behavior Configuration
+auto_notification_enabled: true
+batch_processing_enabled: true
+analytics_enabled: true
+external_integrations_enabled: false  # Simpler setup
+
+# Data Retention and Privacy - More conservative
+data_retention_days: 365
+anonymize_data: true
+gdpr_compliance: false
+
+# API and Integration Settings - Lower limits for smaller institution
+api_rate_limits:
+  per_minute: 30
+  per_hour: 500
+  per_day: 5000
+
+webhook_endpoints: {}
+
+# Custom Fields - Liberal Arts College specific
+custom_fields:
+  institution_type: "liberal_arts_college"
+  Carnegie_classification: "Baccalaureate College"
+  student_enrollment: 2500
+  faculty_count: 180
+  research_expenditures: 2500000  # $2.5M annually (much smaller)
+  undergraduate_focus: true
+  graduate_programs: false
+  professional_schools: false
+  student_faculty_ratio: 12
+  emphasis_undergraduate_research: true
+  summer_research_program: true
+  honors_program: true
+  study_abroad_partnerships: 25
+  community_engagement_programs: true
+
+# Configuration Metadata
+config_version: "1.0.0"
+created_date: "2025-01-31T16:00:00"
+last_updated: "2025-01-31T16:00:00"

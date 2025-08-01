@@ -1,0 +1,59 @@
+# Git
+.git
+.gitignore
+
+# Documentation
+README.md
+development_checklist.yaml
+CLAUDE.md
+
+# Python
+__pycache__
+*.pyc
+*.pyo
+*.pyd
+.Python
+build
+*.egg-info
+.tox
+.coverage
+.coverage.*
+.pytest_cache
+.mypy_cache
+
+# Virtual environments
+venv
+env
+ENV
+
+# IDE
+.vscode
+.idea
+*.swp
+*.swo
+
+# OS
+.DS_Store
+Thumbs.db
+
+# Logs
+*.log
+
+# Temporary files
+temp/
+tmp/
+
+# Data files (too large for container)
+data/raw/*.json
+data/processed/*.json
+
+# Test files (not needed in production)
+tests/
+agents/
+
+# Docker
+.dockerignore
+Dockerfile
+
+# Development scripts
+manage_research_system.py

@@ -1,0 +1,13 @@
+{
+  "name": "Dr. Invalid Faculty",
+  "email": "invalid-email-format",
+  "institution": "Test University",
+  "department": "Computer Science",
+  "career_stage": "assistant_professor",
+  "research_interests": [],
+  "methodologies": [
+    "experimental"
+  ],
+  "h_index": -5,
+  "total_citations": "not_a_number"
+}
