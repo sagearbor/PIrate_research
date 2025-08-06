@@ -1,0 +1,1 @@
+{"name":"Faculty Research Opportunity Notifier","description":"AI-driven system connecting faculty to research funding. Matches grants and expertise.","technologies":["FastAPI","Docker","Google ADK","MCP","Pydantic"],"category":"library","status":"active","language":"Python"}
