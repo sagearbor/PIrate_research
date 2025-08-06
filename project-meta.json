@@ -1,1 +1,1 @@
-{"name":"Faculty Research Opportunity Notifier","description":"AI-driven system connecting faculty with research funding opportunities.","technologies":["FastAPI","Docker","Google ADK","MCP","Python"],"category":"web-app","status":"active","language":"Python"}
+{"name":"PIrate Research Notifier","description":"AI-driven system connecting faculty with research funding. Proactively identifies grants and generates ideas.","technologies":["FastAPI","Docker","Python","Google ADK","MCP"],"category":"web-app","status":"active","language":"Python","hosted_url":null}
