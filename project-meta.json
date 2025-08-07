@@ -1,1 +1,27 @@
-{"name":"Faculty Research Opportunity Notifier","description":"An AI-driven system to connect faculty with research funding opportunities.","technologies":["Python","FastAPI","Docker","Google Agent Development Kit","Model Context Protocol"],"category":["api","research-tool","automation"],"status":"active","language":["Python"],"hosted_url":null}
+{
+  "name": "Faculty Research Opportunity Notifier",
+  "description": "AI-driven system to connect faculty with research funding opportunities.",
+  "technologies": [
+    "Python",
+    "FastAPI",
+    "Docker",
+    "Google Agent Development Kit",
+    "Model Context Protocol"
+  ],
+  "category": [
+    "web-app",
+    "api",
+    "ml-ai"
+  ],
+  "status": "active",
+  "language": [
+    "Python"
+  ],
+  "hosted_url": null,
+  "activity": {
+    "commits_30d": 1,
+    "last_commit": "2025-08-07",
+    "contributors": 0,
+    "hotness_score": 32
+  }
+}
