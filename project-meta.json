@@ -1,17 +1,15 @@
 {
   "name": "Faculty Research Opportunity Notifier",
-  "description": "AI-driven system to connect faculty with research funding opportunities.",
+  "description": "An AI-driven system connecting faculty with research funding. It identifies grants and suggests collaborators.",
   "technologies": [
-    "Python",
     "FastAPI",
     "Docker",
-    "Google Agent Development Kit",
+    "Google ADK",
     "Model Context Protocol"
   ],
   "category": [
-    "web-app",
-    "api",
-    "ml-ai"
+    "research-tool",
+    "automation"
   ],
   "status": "active",
   "language": [
